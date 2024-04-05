@@ -5,18 +5,18 @@ const contentStyle = {
 };
 
 const dataSanPhamCungCap = [
-  { img: './img/SanPhamCungCap/1.png' },
-  { img: './img/SanPhamCungCap/2.png' },
-  { img: './img/SanPhamCungCap/3.png' },
-  { img: './img/SanPhamCungCap/4.png' },
-  { img: './img/SanPhamCungCap/1.png' },
-  { img: './img/SanPhamCungCap/2.png' },
-  { img: './img/SanPhamCungCap/3.png' },
-  { img: './img/SanPhamCungCap/4.png' },
-  { img: './img/SanPhamCungCap/1.png' },
-  { img: './img/SanPhamCungCap/2.png' },
-  { img: './img/SanPhamCungCap/3.png' },
-  { img: './img/SanPhamCungCap/4.png' },
+  { img: './img/Sanphamcungcap/1.png' },
+  { img: './img/Sanphamcungcap/2.png' },
+  { img: './img/Sanphamcungcap/3.png' },
+  { img: './img/Sanphamcungcap/4.png' },
+  { img: './img/Sanphamcungcap/1.png' },
+  { img: './img/Sanphamcungcap/2.png' },
+  { img: './img/Sanphamcungcap/3.png' },
+  { img: './img/Sanphamcungcap/4.png' },
+  { img: './img/Sanphamcungcap/1.png' },
+  { img: './img/Sanphamcungcap/2.png' },
+  { img: './img/Sanphamcungcap/3.png' },
+  { img: './img/Sanphamcungcap/4.png' },
 ];
 const SanPhamCungCap = () => {
   const refCarou = useRef(null);
