@@ -5,6 +5,7 @@ import Number from './Number';
 import LinhVucUngDung from './LinhVucUngDung';
 import TuLieuHinhAnh from './TuLieuHinhAnh';
 import BanMuonBietThem from './BanMuonBietThem';
+import SanPhamCungCap from './SanPhamCungCap';
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Bannertd />
       <LoiMoDau />
       <Number />
+      <SanPhamCungCap />
       <LinhVucUngDung />
       <TuLieuHinhAnh />
       <BanMuonBietThem />

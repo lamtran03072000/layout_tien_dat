@@ -14,8 +14,8 @@
   border-radius: 5px;
   font-weight: bold;
 }
-.bg_xam_2 {
-  background: var(--color_xam_2);
+.color_xam_2 {
+  color: var(--color_xam_2);
 }
 .color_text_content {
   color: var(--color_text_content);
@@ -83,7 +83,7 @@
 
 .banner_td {
   width: 100%;
-  height: 110vh;
+  height: 100vh;
 }
 
 /* Lĩnh vực ứng dụng */

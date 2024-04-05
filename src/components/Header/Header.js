@@ -1,18 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import HeaderSp from './HeaderSp';
+import HeaderVeChungToi from './HeaderVeChungToi';
+import HeaderSanPham from './HeaderSanPham';
 
+const dataActiveHeader = [
+  {
+    id: 0,
+    children: '',
+  },
+  {
+    id: 1,
+    children: <HeaderVeChungToi />,
+  },
+  {
+    id: 2,
+    children: <HeaderSanPham />,
+  },
+  {
+    id: 3,
+    children: '',
+  },
+];
 export default function Header() {
+  const [activeHeader, setActiveHeader] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const handleActiveHeader = (id) => {
+    if (id != activeHeader) {
+      setIsOpen(false);
+    }
+    setIsOpen(!isOpen);
+
+    setActiveHeader(id);
+  };
+  //
   return (
     <div>
-      <div className="container_td header_td grid_td  absolute left-1/2 -translate-x-1/2 z-50">
-        <div className="col-span-4">
+      <div className="container_td header_td grid_td  absolute left-1/2 -translate-x-1/2 z-30">
+        <div className="col-span-2">
           <svg
-            width="177"
-            height="193"
+            className={`${isOpen ? 'opacity-0' : ''} duration-500`}
+            width={177}
+            height={193}
             viewBox="0 0 177 193"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_634_240)">
+            <g clipPath="url(#clip0_634_240)">
               <path
                 d="M88.5 193L0 144.798V48.2024L88.5 0L177 48.2024V144.798L88.5 193ZM3.87198 142.494L88.5 188.583L173.128 142.494V50.4977L88.5 4.4084L3.87198 50.4977V142.494Z"
                 fill="white"
@@ -72,22 +104,45 @@ export default function Header() {
             </g>
             <defs>
               <clipPath id="clip0_634_240">
-                <rect width="177" height="193" fill="white" />
+                <rect width={177} height={193} fill="white" />
               </clipPath>
             </defs>
           </svg>
         </div>
-        <div className="col-span-8 flex justify-between text-white font-semibold">
-          <span>TRANG CHỦ</span>
-          <span>VỀ CHÚNG TÔI</span>
-          <span>SẢN PHẨM</span>
-          <span>LIÊN HỆ</span>
+        {/* note */}
+        <div className="col-span-2"></div>
+        <div
+          className={`col-span-8 flex justify-between text-white font-semibold  ${
+            isOpen ? 'color_text_content' : ''
+          } cursor-pointer duration-500`}
+        >
+          <span className="">TRANG CHỦ</span>
+          <span
+            className=""
+            onClick={() => {
+              handleActiveHeader(1);
+            }}
+          >
+            VỀ CHÚNG TÔI
+          </span>
+          <span
+            onClick={() => {
+              handleActiveHeader(2);
+            }}
+            className=""
+          >
+            SẢN PHẨM
+          </span>
+          <span className="">LIÊN HỆ</span>
           <div className="flex space-x-3">
             <img className="flag" src="./img/flag_vn.png" alt="" />
             <img className="flag" src="./img/flag_en.png" alt="" />
           </div>
         </div>
       </div>
+      <HeaderSp isOpen={isOpen}>
+        {dataActiveHeader[activeHeader]?.children}
+      </HeaderSp>
     </div>
   );
 }

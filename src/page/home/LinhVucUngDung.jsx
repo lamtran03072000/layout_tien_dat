@@ -53,9 +53,9 @@ const LinhVucUngDung = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-center mt-3 text-[18px] font-bold whitespace-nowrap">
+            <div className="text-center mt-3 text-[18px] font-bold whitespace-nowrap">
               {item.title}
-            </p>
+            </div>
           </div>
         </div>
       );
