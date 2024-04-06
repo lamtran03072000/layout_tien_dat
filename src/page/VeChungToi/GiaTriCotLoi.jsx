@@ -48,6 +48,10 @@ const GiaTriCotLoi = () => {
 
   return (
     <div className=" section container_td">
+      <h3 className="text-3xl color_text_content font-bold text-center">
+        Giá trị cốt lõi
+      </h3>
+
       <div className="flex justify-between">{renderGiaTriCotLoi()}</div>
     </div>
   );
