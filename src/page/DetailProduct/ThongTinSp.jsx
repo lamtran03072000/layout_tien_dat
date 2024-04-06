@@ -10,7 +10,7 @@ const ThongTinSp = () => {
         <div className="grid_td gap-x-20">
           {/* trái */}
           <div className="col-start-1 col-end-7 space-y-4">
-            <div className="w-[570px] h-[460px]">
+            <div className="w-full">
               <img
                 src="./img/thongtin/1.png"
                 alt=""
@@ -46,23 +46,23 @@ const ThongTinSp = () => {
             <button className="button_td">Liên hệ đặt hàng</button>
           </div>
         </div>
-        <div className="grid_td ">
-          <div className="col-start-1 col-end-7 flex items-center justify-between ">
-            <div className="w-[177px] h-[109px] rounded-md overflow-hidden">
+        <div className="grid_td gap-x-20">
+          <div className="col-start-1 col-end-7 flex items-center justify-between space-x-5">
+            <div className="h-[109px] flex-1 rounded-md overflow-hidden">
               <img
                 src="./img/thongtin/1.png"
                 alt=""
                 className="w-full object-cover h-full"
               />
             </div>
-            <div className="w-[177px] h-[109px] rounded-md overflow-hidden">
+            <div className="h-[109px] flex-1 rounded-md overflow-hidden">
               <img
                 src="./img/thongtin/1.png"
                 alt=""
                 className="w-full object-cover h-full"
               />
             </div>
-            <div className="w-[177px] h-[109px] rounded-md overflow-hidden">
+            <div className="h-[109px] flex-1 rounded-md overflow-hidden">
               <img
                 src="./img/thongtin/1.png"
                 alt=""
