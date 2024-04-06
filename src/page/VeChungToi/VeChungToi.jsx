@@ -2,6 +2,7 @@ import React from 'react';
 import BannerSp from '../../components/BannerSp';
 import DesChungToi from './DesChungToi';
 import GiaTriCotLoi from './GiaTriCotLoi';
+import TuLieuHinhAnh from './TuLieuHinhAnh';
 
 const VeChungToi = () => {
   const renderContent = () => {
@@ -20,6 +21,7 @@ const VeChungToi = () => {
       <BannerSp content={renderContent()} />
       <DesChungToi />
       <GiaTriCotLoi />
+      <TuLieuHinhAnh />
     </div>
   );
 };
