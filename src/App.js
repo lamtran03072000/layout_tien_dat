@@ -6,6 +6,7 @@ import CustomerTemplate from './template/CustomerTemplate';
 import AboutUs from './page/AboutUs';
 import HomePage from './page/home/HomePage';
 import DetailProduct from './page/DetailProduct/DetailProduct';
+import VeChungToi from './page/VeChungToi/VeChungToi';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<CustomerTemplate />}>
           <Route index element={<HomePage />}></Route>
           <Route path="/detail" element={<DetailProduct />}></Route>
+          <Route path="/ve-chung-toi" element={<VeChungToi />}></Route>
           <Route path="/About-us" element={<AboutUs />}></Route>
         </Route>
 

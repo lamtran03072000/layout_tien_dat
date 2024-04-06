@@ -120,14 +120,7 @@ export default function Header() {
           <a href={'/'} className="">
             TRANG CHỦ
           </a>
-          <span
-            className=""
-            onClick={() => {
-              handleActiveHeader(1);
-            }}
-          >
-            VỀ CHÚNG TÔI
-          </span>
+          <a href="/ve-chung-toi">VỀ CHÚNG TÔI</a>
           <span
             onClick={() => {
               handleActiveHeader(2);
