@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const data = [
   {
@@ -95,9 +96,9 @@ const HeaderSanPham = () => {
           <p>{item.tenLoai}</p>
           <div className="flex space-x-3">
             {item.sanPham.map((sp, index) => (
-              <p className="whitespace-nowrap" key={index}>
+              <a href={'/detail'} className="whitespace-nowrap" key={index}>
                 {sp.name}
-              </p>
+              </a>
             ))}
           </div>
         </div>

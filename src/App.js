@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CustomerTemplate from './template/CustomerTemplate';
 import AboutUs from './page/AboutUs';
 import HomePage from './page/home/HomePage';
+import DetailProduct from './page/DetailProduct/DetailProduct';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<CustomerTemplate />}>
           <Route index element={<HomePage />}></Route>
+          <Route path="/detail" element={<DetailProduct />}></Route>
           <Route path="/About-us" element={<AboutUs />}></Route>
         </Route>
 

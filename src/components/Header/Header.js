@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import HeaderSp from './HeaderSp';
 import HeaderVeChungToi from './HeaderVeChungToi';
 import HeaderSanPham from './HeaderSanPham';
+import { NavLink } from 'react-router-dom';
 
 const dataActiveHeader = [
   {
@@ -116,7 +117,9 @@ export default function Header() {
             isOpen ? 'color_text_content' : ''
           } cursor-pointer duration-500`}
         >
-          <span className="">TRANG CHỦ</span>
+          <a href={'/'} className="">
+            TRANG CHỦ
+          </a>
           <span
             className=""
             onClick={() => {

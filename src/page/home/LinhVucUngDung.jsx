@@ -45,7 +45,7 @@ const LinhVucUngDung = () => {
 
       return (
         <div key={index} className={`${classDf}`}>
-          <div className="">
+          <div className="flex flex-col items-center">
             <div className="w-[177px] h-[177px] rounded-full overflow-hidden">
               <img
                 src={item.img}
@@ -63,7 +63,7 @@ const LinhVucUngDung = () => {
   };
 
   return (
-    <div className="container_td section space-y-10">
+    <div className="container_td  section space-y-10">
       <h3 className="text-3xl color_text_content font-bold text-center">
         Lĩnh vực ứng dụng
       </h3>
