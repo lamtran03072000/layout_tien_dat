@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const HeaderSp = ({ children, isOpen }) => {
+const HeaderSp = ({
+  children,
+  isOpen,
+  setIsOnHeaderSP,
+  handleActiveHeader,
+}) => {
   const [maxHeight, setMaxHeight] = useState('0px');
   const contentRef = useRef(null);
 
@@ -18,17 +23,26 @@ const HeaderSp = ({ children, isOpen }) => {
     return () => {
       window.removeEventListener('resize', updateMaxHeight);
     };
-  }, [isOpen]); // Phụ thuộc vào isOpen để biết khi nào cập nhật chiều cao
+  }, [isOpen, children]); // Phụ thuộc vào isOpen để biết khi nào cập nhật chiều cao
 
   return (
     <div
+      onMouseEnter={() => {
+        console.log('do');
+        setIsOnHeaderSP(true);
+      }}
+      onMouseLeave={() => {
+        console.log('ra');
+        setIsOnHeaderSP(false);
+        handleActiveHeader(null);
+      }}
       ref={contentRef}
       className="duration-500 absolute top-0 left-0 z-10 w-full  bg-white shadow-md overflow-hidden"
       style={{
         maxHeight: maxHeight,
       }}
     >
-      <div className="container_td header_td grid_td">
+      <div className="container_td header_td grid_td ">
         <div className="col-span-2">
           <img
             className="w-[177px] h-[193px]"

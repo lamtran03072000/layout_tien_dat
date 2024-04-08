@@ -11,9 +11,9 @@ const TuLieuHinhAnh = () => {
     refCarou.current.prev();
   };
   const renderTuLieuHinhAnh = () => {
-    return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((d) => {
+    return [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((d, i) => {
       return (
-        <div>
+        <div key={i}>
           <div style={contentStyle}>
             <div className="grid grid-cols-2 gap-10">
               <div>

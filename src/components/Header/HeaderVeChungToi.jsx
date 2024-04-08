@@ -2,8 +2,8 @@ import React from 'react';
 
 const HeaderVeChungToi = () => {
   return (
-    <>
-      <div className="col-span-2"></div>
+    <div className=" col-span-10 grid grid-cols-10 ">
+      <div className="col-span-2 "></div>
       <div className={`col-span-8 pt-14`}>
         <div className=" flex justify-between color_text_content cursor-pointer">
           <span className=""></span>
@@ -19,7 +19,7 @@ const HeaderVeChungToi = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ const DesChungToi = () => {
         <div className="grid_td">
           <div className="col-start-4 col-end-10 space-y-5 color_text_content ">
             <div className="relative">
-              <i class="fa-solid fa-quote-left text-4xl text-red-800 absolute -top-2 -left-12"></i>
+              <i className="fa-solid fa-quote-left text-4xl text-red-800 absolute -top-2 -left-12"></i>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis

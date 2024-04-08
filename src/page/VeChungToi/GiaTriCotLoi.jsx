@@ -23,7 +23,10 @@ const GiaTriCotLoi = () => {
   const renderGiaTriCotLoi = () => {
     return data.map((item, index) => {
       return (
-        <div className="w-[275px] h-[275px] relative group transition  duration-400">
+        <div
+          key={index}
+          className="w-[275px] h-[275px] relative group transition  duration-400"
+        >
           <img
             src="./img/giatricotloi.png"
             className="w-full h-full object-cover"
