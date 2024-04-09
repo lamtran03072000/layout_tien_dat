@@ -11,7 +11,6 @@ export default function TextEditer({ data, keySection, handleUpdateContent }) {
       contentSection: data,
     };
     const response = await aboutVnService.updateContent(dataContent);
-    console.log('response: ', response);
   };
   return (
     <div className="relative">
@@ -38,7 +37,6 @@ export default function TextEditer({ data, keySection, handleUpdateContent }) {
         data={data}
         onReady={(editor) => {
           // You can store the "editor" and use when it is needed.
-          // console.log('Editor is ready to use!', editor);
         }}
         onChange={(event, editor) => {
           const data = editor.getData();

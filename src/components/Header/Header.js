@@ -4,6 +4,12 @@ import HeaderVeChungToi from './HeaderVeChungToi';
 import HeaderSanPham from './HeaderSanPham';
 import { NavLink } from 'react-router-dom';
 import SvgLogo from './SvgLogo';
+import { useDispatch } from 'react-redux';
+import {
+  setActiveHeaderAction,
+  setIsOpenHeaderSpAction,
+} from '../../store/Animation/animationSlice';
+import { useSelector } from 'react-redux';
 const dataActiveHeader = [
   {
     id: 0,
@@ -23,24 +29,21 @@ const dataActiveHeader = [
   },
 ];
 export default function Header() {
-  const [activeHeader, setActiveHeader] = useState();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isOnHeaderSp, setIsOnHeaderSP] = useState(false);
-  const handleActiveHeader = (id) => {
-    console.log('id: ', id);
-    setActiveHeader(id);
-  };
+  const dispatch = useDispatch();
+  const { isOpenHeaderSp, activeHeader, isOnHeaderSp } = useSelector(
+    (state) => state.animationSlice,
+  );
 
-  const handleOpenHeader = (id) => {
+  const handleOpenHeader = () => {
     if (activeHeader === 2 || activeHeader === 1 || isOnHeaderSp) {
-      setIsOpen(true);
+      dispatch(setIsOpenHeaderSpAction(true));
     } else {
-      setIsOpen(false);
+      dispatch(setIsOpenHeaderSpAction(false));
     }
   };
   useEffect(() => {
     handleOpenHeader();
-  }, [activeHeader]);
+  }, [activeHeader, isOnHeaderSp]);
 
   return (
     <div className="absolute w-full z-10">
@@ -52,37 +55,38 @@ export default function Header() {
           <div className="absolute w-full h-full z-50">
             <div
               className={`w-full  flex justify-between text-white   font-semibold  ${
-                isOpen ? 'color_text_content' : ''
+                isOpenHeaderSp ? 'color_text_content' : ''
               } cursor-pointer duration-500`}
             >
-              <a
+              <NavLink
                 onMouseEnter={() => {
-                  handleActiveHeader(0);
+                  dispatch(setActiveHeaderAction(0));
                 }}
-                href={'/'}
+                to={'/'}
                 className=""
               >
                 TRANG CHỦ
-              </a>
-              <a
+              </NavLink>
+              <NavLink
                 onMouseEnter={() => {
-                  handleActiveHeader(1);
+                  dispatch(setActiveHeaderAction(1));
                 }}
-                href="/ve-chung-toi"
+                to="/ve-chung-toi"
               >
                 VỀ CHÚNG TÔI
-              </a>
-              <span
+              </NavLink>
+              <NavLink
+                to="/list-product"
                 onMouseEnter={() => {
-                  handleActiveHeader(2);
+                  dispatch(setActiveHeaderAction(2));
                 }}
                 className=""
               >
                 SẢN PHẨM
-              </span>
+              </NavLink>
               <span
                 onMouseEnter={() => {
-                  handleActiveHeader(3);
+                  dispatch(setActiveHeaderAction(3));
                 }}
                 className=""
               >
@@ -95,13 +99,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <HeaderSp
-          isOpen={isOpen}
-          setIsOnHeaderSP={setIsOnHeaderSP}
-          handleActiveHeader={handleActiveHeader}
-        >
-          {dataActiveHeader[activeHeader]?.children}
-        </HeaderSp>
+        <HeaderSp>{dataActiveHeader[activeHeader]?.children}</HeaderSp>
       </div>
     </div>
   );
