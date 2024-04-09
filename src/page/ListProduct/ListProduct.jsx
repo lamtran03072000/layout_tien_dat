@@ -1,6 +1,7 @@
 import React from 'react';
 import BannerSp from '../../components/BannerSp';
-
+import CacLoaiSanPham from './CacLoaiSanPham';
+import BanMuonBietThem from '../../components/BanMuonBietThem';
 const ListProduct = () => {
   const renderContent = () => {
     return (
@@ -16,6 +17,8 @@ const ListProduct = () => {
   return (
     <div>
       <BannerSp content={renderContent()} />
+      <CacLoaiSanPham />
+      <BanMuonBietThem />
     </div>
   );
 };

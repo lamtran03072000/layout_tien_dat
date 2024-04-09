@@ -4,8 +4,8 @@ import LoiMoDau from './LoiMoDau';
 import Number from './Number';
 import LinhVucUngDung from './LinhVucUngDung';
 import TuLieuHinhAnh from './TuLieuHinhAnh';
-import BanMuonBietThem from './BanMuonBietThem';
 import SanPhamCungCap from './SanPhamCungCap';
+import BanMuonBietThem from '../../components/BanMuonBietThem';
 
 const HomePage = () => {
   return (

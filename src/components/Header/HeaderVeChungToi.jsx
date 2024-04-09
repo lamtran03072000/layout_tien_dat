@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
 const HeaderVeChungToi = () => {
   return (
     <div className=" col-span-10 grid grid-cols-10 ">
@@ -8,7 +9,7 @@ const HeaderVeChungToi = () => {
         <div className=" flex justify-between color_text_content cursor-pointer">
           <span className=""></span>
           <div className="pl-12 space-y-8 font-semibold">
-            <p>TUYỂN DỤNG</p>
+            <a href="/tuyen-dung">TUYỂN DỤNG</a>
             <p>MÔI TRƯỜNG</p>
           </div>
           <span className=""></span>

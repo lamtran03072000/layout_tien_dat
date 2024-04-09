@@ -9,6 +9,7 @@ import DetailProduct from './page/DetailProduct/DetailProduct';
 import VeChungToi from './page/VeChungToi/VeChungToi';
 import ListProduct from './page/ListProduct/ListProduct';
 import HideHeader from './HOC/HideHeader';
+import TuyenDung from './page/TuyenDung/TuyenDung';
 
 function App() {
   return (
@@ -31,6 +32,14 @@ function App() {
             element={
               <HideHeader>
                 <ListProduct />
+              </HideHeader>
+            }
+          ></Route>
+          <Route
+            path="/tuyen-dung"
+            element={
+              <HideHeader>
+                <TuyenDung />
               </HideHeader>
             }
           ></Route>
