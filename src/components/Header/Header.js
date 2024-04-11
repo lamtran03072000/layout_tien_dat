@@ -84,14 +84,15 @@ export default function Header() {
               >
                 SẢN PHẨM
               </NavLink>
-              <span
+              <NavLink
+                to={'/lien-he'}
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(3));
                 }}
                 className=""
               >
                 LIÊN HỆ
-              </span>
+              </NavLink>
               <div className="flex space-x-3">
                 <img className="flag" src="./img/flag_vn.png" alt="" />
                 <img className="flag" src="./img/flag_en.png" alt="" />
