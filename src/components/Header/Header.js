@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HeaderSp from './HeaderSp';
 import HeaderVeChungToi from './HeaderVeChungToi';
 import HeaderSanPham from './HeaderSanPham';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import SvgLogo from './SvgLogo';
 import { useDispatch } from 'react-redux';
 import {
@@ -10,6 +10,7 @@ import {
   setIsOpenHeaderSpAction,
 } from '../../store/Animation/animationSlice';
 import { useSelector } from 'react-redux';
+import { getContentPageThunk } from '../../store/contentPage/contentPageThunk';
 const dataActiveHeader = [
   {
     id: 0,
@@ -30,6 +31,9 @@ const dataActiveHeader = [
 ];
 export default function Header() {
   const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { content } = useSelector((state) => state.contentPageSlice);
+
   const { isOpenHeaderSp, activeHeader, isOnHeaderSp } = useSelector(
     (state) => state.animationSlice,
   );
@@ -41,15 +45,26 @@ export default function Header() {
       dispatch(setIsOpenHeaderSpAction(false));
     }
   };
+  const handleSwitchLanguage = (lg) => {
+    setSearchParams({ language: lg });
+    dispatch(getContentPageThunk(lg));
+  };
   useEffect(() => {
     handleOpenHeader();
   }, [activeHeader, isOnHeaderSp]);
-
+  useEffect(() => {
+    const language = searchParams.get('language');
+    if (language) {
+      dispatch(getContentPageThunk(language));
+    }
+  }, []);
   return (
     <div className="absolute w-full z-10">
       <div className="container_td header_td grid_td ">
         <div className="col-span-2">
-          <SvgLogo />
+          <NavLink to={'/'}>
+            <SvgLogo />
+          </NavLink>
         </div>
         <div className="col-start-5 col-span-8 relative  mb-auto">
           <div className="absolute w-full h-full z-50">
@@ -65,7 +80,7 @@ export default function Header() {
                 to={'/'}
                 className=""
               >
-                TRANG CHỦ
+                {content?.headerPage?.titlePage['1']}
               </NavLink>
               <NavLink
                 onMouseEnter={() => {
@@ -73,7 +88,7 @@ export default function Header() {
                 }}
                 to="/ve-chung-toi"
               >
-                VỀ CHÚNG TÔI
+                {content?.headerPage?.titlePage['2']}
               </NavLink>
               <NavLink
                 to="/list-product"
@@ -82,7 +97,7 @@ export default function Header() {
                 }}
                 className=""
               >
-                SẢN PHẨM
+                {content?.headerPage?.titlePage['3']}
               </NavLink>
               <NavLink
                 to={'/lien-he'}
@@ -91,11 +106,23 @@ export default function Header() {
                 }}
                 className=""
               >
-                LIÊN HỆ
+                {content?.headerPage?.titlePage['4']}
               </NavLink>
               <div className="flex space-x-3">
-                <img className="flag" src="./img/flag_vn.png" alt="" />
-                <img className="flag" src="./img/flag_en.png" alt="" />
+                <div
+                  onClick={() => {
+                    handleSwitchLanguage('en');
+                  }}
+                >
+                  <img className="flag" src="./img/flag_vn.png" alt="" />
+                </div>
+                <div
+                  onClick={() => {
+                    handleSwitchLanguage('vn');
+                  }}
+                >
+                  <img className="flag" src="./img/flag_en.png" alt="" />
+                </div>
               </div>
             </div>
           </div>

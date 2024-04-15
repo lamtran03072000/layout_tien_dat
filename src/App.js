@@ -27,7 +27,6 @@ function App() {
               </HideHeader>
             }
           ></Route>
-          <Route path="/About-us" element={<AboutUs />}></Route>
           <Route
             path="/list-product"
             element={

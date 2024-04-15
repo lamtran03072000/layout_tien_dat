@@ -46,8 +46,6 @@ export default function TextEditer({ data, keySection, handleUpdateContent }) {
           // setHidden(false);
         }}
         onFocus={(event, editor) => {
-          // console.log('Focus.', editor);
-
           setHidden(true);
         }}
       />

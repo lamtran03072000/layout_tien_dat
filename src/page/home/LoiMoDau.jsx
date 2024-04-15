@@ -1,31 +1,21 @@
 import React from 'react';
+import parse from 'html-react-parser';
+import { NavLink } from 'react-router-dom';
 
-const LoiMoDau = () => {
+const LoiMoDau = ({ dataLoiMoDau }) => {
   return (
     <div className="container_td section">
       <div className="grid_td">
         <div className="col-start-1 col-end-7 space-y-8 my-auto">
-          <h3 className="font-bold text-3xl color_text_content">Lời mở đầu</h3>
+          {parse(`${dataLoiMoDau?.title}`)}
           <div className="color_text_content  space-y-8">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsuspendisse ultrices gravida.
-            </p>
-            <p>
-              Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-              suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsuspendisse ultrices gravida.
-            </p>
+            {parse(`${dataLoiMoDau?.content}`)}
           </div>
-          <button className="button_td">Chúng tôi là ai ?</button>
+          <div>
+            <a href={'/ve-chung-toi'} className="button_td text-xl">
+              {parse(`${dataLoiMoDau?.button}`)}
+            </a>
+          </div>
         </div>
         <div className="col-start-8 col-end-13  rounded-3xl overflow-hidden">
           <img

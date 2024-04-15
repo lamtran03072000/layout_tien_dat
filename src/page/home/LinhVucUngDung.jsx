@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
 const dataLinhVucUngDung = [
   {
@@ -32,7 +33,7 @@ const dataLinhVucUngDung = [
   },
 ];
 
-const LinhVucUngDung = () => {
+const LinhVucUngDung = ({ dataLinhVucUngDung }) => {
   const renderLinhVucUngDung = () => {
     const classes = [
       'col-start-3 col-end-5', // Lớp cho phần tử đầu tiên
@@ -40,7 +41,7 @@ const LinhVucUngDung = () => {
       'col-start-9 col-end-11', // Lớp cho phần tử thứ ba
       // Thêm vào đây nếu bạn muốn nhiều lớp hơn
     ];
-    return dataLinhVucUngDung.map((item, index) => {
+    return dataLinhVucUngDung?.listData.map((item, index) => {
       const classDf = classes[index % classes.length];
 
       return (
@@ -54,7 +55,7 @@ const LinhVucUngDung = () => {
               />
             </div>
             <div className="text-center mt-3 text-[18px] font-bold whitespace-nowrap">
-              {item.title}
+              {parse(`${item.title}`)}
             </div>
           </div>
         </div>
@@ -63,14 +64,16 @@ const LinhVucUngDung = () => {
   };
 
   return (
-    <div className="container_td  section space-y-10">
-      <h3 className="text-3xl color_text_content font-bold text-center">
-        Lĩnh vực ứng dụng
-      </h3>
-      <div className="grid_td color_text_content gap-y-12">
-        {renderLinhVucUngDung()}
+    dataLinhVucUngDung && (
+      <div className="container_td  section space-y-10">
+        <h3 className="text-3xl color_text_content font-bold text-center">
+          {dataLinhVucUngDung.title}
+        </h3>
+        <div className="grid_td color_text_content gap-y-12">
+          {renderLinhVucUngDung()}
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
