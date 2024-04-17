@@ -105,10 +105,12 @@ const CacLoaiSanPham = () => {
       return (
         <div
           key={index}
-          className="w-1/3 flex flex-col items-center space-y-3 p-5"
+          className="w-1/3 lg:w-full flex flex-col items-center space-y-3 p-5"
         >
-          <div className="bg-gray-300 h-[340px] w-full"></div>
-          <p className="text-xl color_text_content font-bold">{item.tenLoai}</p>
+          <div className="bg-gray-300 h-[340px] lg:h-[309px] w-full"></div>
+          <p className="text-xl color_text_content font-bold lg:text-base">
+            {item.tenLoai}
+          </p>
           <div className="flex items-center justify-between space-x-6">
             {item.sanPham.map((sp, index) => {
               return (
@@ -124,7 +126,7 @@ const CacLoaiSanPham = () => {
   };
   return (
     <div className="container_td section">
-      <h3 className="text-3xl color_text_content font-bold text-center mb-12">
+      <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center mb-12">
         Các loại sản phẩm
       </h3>
       <div className="flex justify-center items-center flex-wrap">

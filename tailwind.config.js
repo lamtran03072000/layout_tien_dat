@@ -10,20 +10,22 @@ module.exports = {
         sm: { max: '639px' }, // Màn hình nhỏ hơn 640px
       },
       screens: {
-        '2xl': { max: '1535px' },
+        // '2xl': { max: '1535px' },
         // => @media (max-width: 1535px) { ... }
 
-        xl: { max: '1279px', min: '993px' },
+        xl: { max: '1024px', min: '640px' },
         // => @media (max-width: 1279px) { ... }
 
-        lg: { max: '992px', min: '768px' },
-        // => @media (max-width: 992px) { ... }
+        lg: { max: '639px' },
+        // // => @media (max-width: 992px) { ... }
+        // lg: { max: '992px', min: '768px' },
+        // // => @media (max-width: 992px) { ... }
 
-        md: { max: '767px' },
-        // => @media (max-width: 767px) { ... }
+        // md: { max: '767px' },
+        // // => @media (max-width: 767px) { ... }
 
-        sm: { max: '639px' },
-        // => @media (max-width: 639px) { ... }
+        // sm: { max: '639px' },
+        // // => @media (max-width: 639px) { ... }
       },
     },
   },

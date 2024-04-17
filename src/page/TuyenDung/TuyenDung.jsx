@@ -7,10 +7,12 @@ const TuyenDung = () => {
   const renderContent = () => {
     return (
       <div className="space-y-7">
-        <p className="!text-3xl">Cơ hội việc làm</p>
-        <div className="l-text !font-bold">
-          <p>Doanh Nghiệp Sản Xuất Hạt Nhựa</p>
-          <p>Hàng Đầu Việt Nam</p>
+        <div className="text-3xl lg:text-xl font-medium">Cơ hội việc làm</div>
+        <div className="l-text !font-bold ">
+          <div className="lg:text-3xl">
+            <div>Doanh Nghiệp Sản Xuất Hạt Nhựa</div>
+            <div>Hàng Đầu Việt Nam</div>
+          </div>
         </div>
       </div>
     );

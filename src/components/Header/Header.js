@@ -58,19 +58,20 @@ export default function Header() {
       dispatch(getContentPageThunk(language));
     }
   }, []);
+  console.log('isOpenHeaderSp: ', isOpenHeaderSp);
   return (
     <div className="absolute w-full z-10">
       <div className="container_td header_td grid_td ">
         <div className="col-span-2">
           <NavLink to={'/'}>
-            <SvgLogo />
+            <SvgLogo w={177} h={193} />
           </NavLink>
         </div>
         <div className="col-start-5 col-span-8 relative  mb-auto">
           <div className="absolute w-full h-full z-50">
             <div
-              className={`w-full  flex justify-between text-white   font-semibold  ${
-                isOpenHeaderSp ? 'color_text_content' : ''
+              className={`w-full  flex justify-between    font-semibold  ${
+                isOpenHeaderSp ? 'color_text_content' : 'text-white'
               } cursor-pointer duration-500`}
             >
               <NavLink
@@ -78,11 +79,12 @@ export default function Header() {
                   dispatch(setActiveHeaderAction(0));
                 }}
                 to={'/'}
-                className=""
+                className="flex-1"
               >
                 {content?.headerPage?.titlePage['1']}
               </NavLink>
               <NavLink
+                className="flex-1"
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(1));
                 }}
@@ -91,11 +93,11 @@ export default function Header() {
                 {content?.headerPage?.titlePage['2']}
               </NavLink>
               <NavLink
+                className="flex-1"
                 to="/list-product"
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(2));
                 }}
-                className=""
               >
                 {content?.headerPage?.titlePage['3']}
               </NavLink>
@@ -104,7 +106,7 @@ export default function Header() {
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(3));
                 }}
-                className=""
+                className="flex-1"
               >
                 {content?.headerPage?.titlePage['4']}
               </NavLink>

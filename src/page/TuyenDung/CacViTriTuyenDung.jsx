@@ -71,12 +71,14 @@ const CacViTriTuyenDung = () => {
           <img
             src="./img/vitrituyendung.png"
             alt=""
-            className="absolute w-full h-full top-0 left-0 -z-10"
+            className="absolute w-full h-full top-0 left-0 -z-10 object-cover"
           />
-          <div className="col-start-8 col-end-13 my-auto space-y-14">
+          <div className="col-start-8 lg:col-start-3 col-end-13 lg:col-end-5 my-auto space-y-14 container_td">
             <div>
-              <p className="text-white text-xl font-medium">{d.tenViTri}</p>
-              <p className="text-white text-xl font-extralight">
+              <p className="text-white text-xl lg:text-base font-medium">
+                {d.tenViTri}
+              </p>
+              <p className="text-white text-xl lg:text-xs font-extralight">
                 Số Lượng : {d.soLuong} nhân công
               </p>
             </div>
@@ -91,10 +93,10 @@ const CacViTriTuyenDung = () => {
 
   return (
     <div className=" section ">
-      <h3 className="text-3xl color_text_content font-bold text-center mb-12">
+      <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center mb-12 lg:mb-3">
         Các vị trí tuyển dụng
       </h3>
-      <div className="space-y-10">{renderViTriTuyenDung()}</div>;
+      <div className="space-y-10 ">{renderViTriTuyenDung()}</div>;
     </div>
   );
 };

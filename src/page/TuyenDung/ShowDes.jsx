@@ -15,7 +15,10 @@ const ShowDes = ({ des }) => {
   };
   return (
     <>
-      <button className="text-white font-extralight" onClick={showModal}>
+      <button
+        className="text-white font-extralight lg:text-xs"
+        onClick={showModal}
+      >
         Xem chi tiết công việc <i className="fa-solid fa-angles-right"></i>
       </button>
       <Modal
@@ -32,7 +35,7 @@ const ShowDes = ({ des }) => {
             onClick={() => {
               window.location.href = '/lien-he';
             }}
-            className="button_td text-xl !rounded-xl"
+            className="button_td text-xl !rounded-xl lg:text-base"
           >
             Liên hệ ngay
           </button>

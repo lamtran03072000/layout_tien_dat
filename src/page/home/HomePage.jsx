@@ -12,6 +12,7 @@ const HomePage = () => {
   const { content } = useSelector((state) => state.contentPageSlice);
   return (
     <div>
+      {/* <div className="bg-black h-20 xl:bg-yellow-400 lg:bg-blue-600"></div> */}
       <Bannertd dataBanner={content.homePage?.banner} />
       <LoiMoDau dataLoiMoDau={content.homePage?.loiMoDau} />
       <Number dataNumber={content.homePage?.number} />

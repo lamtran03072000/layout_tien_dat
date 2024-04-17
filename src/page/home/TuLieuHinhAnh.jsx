@@ -11,21 +11,21 @@ const TuLieuHinhAnh = ({ dataTuLieuHinhAnh }) => {
   };
   return (
     dataTuLieuHinhAnh && (
-      <div className="section space-y-10">
-        <h3 className="text-3xl color_text_content font-bold text-center">
+      <div className="section space-y-10 lg:space-y-4">
+        <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center">
           {dataTuLieuHinhAnh.title}
         </h3>
 
         <div className="relative color_xam_2">
           <span
             onClick={handleNext}
-            className="text-4xl absolute top-1/2 -translate-y-1/2 right-20 cursor-pointer   z-50"
+            className="text-4xl absolute top-1/2 -translate-y-1/2 right-20 cursor-pointer   z-50 lg:hidden"
           >
             <i className="fa-solid fa-angles-right"></i>
           </span>
           <span
             onClick={handlePre}
-            className="text-4xl absolute top-1/2 -translate-y-1/2 left-20  cursor-pointer z-50"
+            className="text-4xl absolute top-1/2 -translate-y-1/2 left-20  cursor-pointer z-50 lg:hidden"
           >
             <i className="fa-solid fa-angles-left"></i>
           </span>

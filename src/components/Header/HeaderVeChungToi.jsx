@@ -11,7 +11,7 @@ const HeaderVeChungToi = () => {
       <div className={`col-span-8 pt-14`}>
         <div className=" flex justify-between color_text_content cursor-pointer">
           <span className=""></span>
-          <div className="pl-12 space-y-8 font-semibold">
+          <div className="pl-9 space-y-8 font-semibold">
             <a href="/tuyen-dung"> {content?.headerPage?.titlePage['5']}</a>
             <p> {content?.headerPage?.titlePage['6']}</p>
           </div>

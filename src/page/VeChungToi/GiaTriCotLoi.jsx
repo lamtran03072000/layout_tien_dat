@@ -23,26 +23,28 @@ const GiaTriCotLoi = () => {
   const renderGiaTriCotLoi = () => {
     return data.map((item, index) => {
       return (
-        <div
-          key={index}
-          className="w-[275px] h-[275px] relative group transition  duration-400"
-        >
-          <img
-            src="./img/giatricotloi.png"
-            className="w-full h-full object-cover"
-            alt=""
-          />
-          <div className="absolute w-full h-full top-0 flex flex-col items-center justify-center space-y-5 group-hover:opacity-0 duration-300">
-            <div className="w-[150px] h-[150px] bg-[#D9D9D9] rounded-full"></div>
-            <p className="text-xl text-white font-medium">
-              Giá trị {index + 1}
-            </p>
-          </div>
-          <div className="absolute w-full h-full top-0 flex flex-col items-center justify-center space-y-5   duration-200">
-            <p className="opacity-0 group-hover:opacity-100 text-white px-4 text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt
-            </p>
+        <div className="lg:w-1/2 lg:mb-4 lg:px-2">
+          <div
+            key={index}
+            className="w-[275px]  lg:w-[100%] h-[275px] lg:h-[156px] relative group transition  duration-400"
+          >
+            <img
+              src="./img/giatricotloi.png"
+              className="w-full h-full object-cover"
+              alt=""
+            />
+            <div className="absolute w-full h-full top-0 flex flex-col items-center justify-center space-y-5 group-hover:opacity-0 duration-300">
+              <div className="w-[150px] lg:w-[68px] h-[150px] lg:h-[67px] bg-[#D9D9D9] rounded-full"></div>
+              <p className="text-xl text-white font-medium lg:text-base">
+                Giá trị {index + 1}
+              </p>
+            </div>
+            <div className="absolute w-full h-full top-0 flex flex-col items-center justify-center space-y-5   duration-200">
+              <p className="opacity-0 group-hover:opacity-100 text-white px-4 text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt
+              </p>
+            </div>
           </div>
         </div>
       );
@@ -55,7 +57,9 @@ const GiaTriCotLoi = () => {
         Giá trị cốt lõi
       </h3>
 
-      <div className="flex justify-between">{renderGiaTriCotLoi()}</div>
+      <div className="flex justify-between flex-wrap">
+        {renderGiaTriCotLoi()}
+      </div>
     </div>
   );
 };
