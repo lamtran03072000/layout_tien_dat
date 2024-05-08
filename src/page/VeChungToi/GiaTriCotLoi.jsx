@@ -52,7 +52,7 @@ const GiaTriCotLoi = () => {
   };
 
   return (
-    <div className=" section container_td">
+    <div className=" section container_td" id="giaTriCotLoi">
       <h3 className="text-3xl color_text_content font-bold text-center mb-12">
         Giá trị cốt lõi
       </h3>

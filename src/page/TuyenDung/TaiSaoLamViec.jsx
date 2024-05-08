@@ -1,23 +1,17 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
-const TaiSaoLamViec = () => {
+const TaiSaoLamViec = ({ dataTaiSaoLamViec }) => {
   return (
     <div>
       <div className=" section container_td">
         <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center mb-12 lg:mb-3">
-          Tại sao làm việc tại Đại Tiến Phát?
+          {parse(`${dataTaiSaoLamViec?.title}`)}
         </h3>
         <div className="grid_td">
           <div className="col-start-2 col-end-12 lg:col-start-1 lg:col-end-5 space-y-5 color_text_content font-light">
             <p className="text-pretty">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsuspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-              gravida. Risus commodo viverra maecenas accumsan lacus vel
-              facilisis.
+              {parse(`${dataTaiSaoLamViec?.content}`)}
             </p>
           </div>
         </div>

@@ -79,9 +79,12 @@ const TuLieuHinhAnh = () => {
   };
 
   return (
-    <div className="section space-y-10 lg:space-y-3 container_td">
+    <div
+      className="section space-y-10 lg:space-y-3 container_td "
+      id="tuLieuHinhAnhAbout"
+    >
       <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center">
-        Tư liệu hình ảnh
+        Thư viện hình ảnh
       </h3>
 
       <div className="relative color_xam_2">

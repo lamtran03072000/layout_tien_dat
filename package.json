@@ -16,7 +16,9 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "countup.js": "^2.8.0",
+    "formik": "^2.4.5",
     "html-react-parser": "^5.1.8",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-countup": "^6.5.3",
     "react-dom": "^18.2.0",
@@ -24,7 +26,8 @@
     "react-responsive": "^10.0.0",
     "react-router-dom": "^6.22.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

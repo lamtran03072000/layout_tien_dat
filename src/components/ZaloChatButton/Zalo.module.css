@@ -1,0 +1,23 @@
+.bell-border {
+  border: 1px solid #7844e8 !important;
+  animation-name: bord-pop;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  box-shadow:
+    2px 2px 5px #ccc,
+    -2px -2px 5px #ccc;
+}
+
+@keyframes bord-pop {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 0) scale(1.9);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1.9);
+    opacity: 0;
+  }
+}

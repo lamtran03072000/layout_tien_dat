@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import { NavLink, useNavigate } from 'react-router-dom';
+import parse from 'html-react-parser';
+
 const ShowDes = ({ des }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -27,18 +29,20 @@ const ShowDes = ({ des }) => {
         footer={false}
         onOk={handleOk}
         onCancel={handleCancel}
-        width={'100%'}
+        width={'75%'}
       >
-        <div className="space-y-9">
-          {des}
-          <button
-            onClick={() => {
-              window.location.href = '/lien-he';
-            }}
-            className="button_td text-xl !rounded-xl lg:text-base"
-          >
-            Liên hệ ngay
-          </button>
+        <div className="space-y-9 ">
+          {parse(`${des}`)}
+          <div className="flex justify-center">
+            <button
+              onClick={() => {
+                window.location.href = '/lien-he';
+              }}
+              className="button_td text-xl !rounded-xl lg:text-base"
+            >
+              Liên hệ ngay
+            </button>
+          </div>
         </div>
       </Modal>
     </>

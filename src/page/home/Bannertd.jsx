@@ -1,13 +1,10 @@
 import React from 'react';
 import parse from 'html-react-parser';
+import ImgFetch from '../../components/ImgFetch/ImgFetch';
 const Bannertd = ({ dataBanner }) => {
   return (
     <div className="banner_td relative">
-      <img
-        src={'./img/banner_td.png'}
-        alt=""
-        className="w-full h-full object-cover"
-      />
+      <ImgFetch imgId={dataBanner?.img} />
       <img
         src="./img/ovl_banner.png"
         alt=""

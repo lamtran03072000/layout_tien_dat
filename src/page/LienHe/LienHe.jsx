@@ -1,12 +1,13 @@
 import React from 'react';
 import BannerSp from '../../components/BannerSp';
 import FormLienHe from './FormLienHe';
+import ThongTinChinhSach from './ThongTinChinhSach';
 
 const LienHe = () => {
   const renderContent = () => {
     return (
       <div className="space-y-7">
-        <div className="text-3xl lg:text-xl font-medium">Liên Hệ</div>
+        <div className="text-3xl lg:text-xl font-medium">Hỗ trợ khách hàng</div>
         <div className="l-text !font-bold ">
           <div className="lg:text-3xl">
             <div>Doanh Nghiệp Sản Xuất Hạt Nhựa</div>
@@ -41,6 +42,7 @@ const LienHe = () => {
           </div>
         </div>
       </div>
+      <ThongTinChinhSach />
       <FormLienHe />
     </div>
   );

@@ -11,13 +11,22 @@ import ListProduct from './page/ListProduct/ListProduct';
 import HideHeader from './HOC/HideHeader';
 import TuyenDung from './page/TuyenDung/TuyenDung';
 import LienHe from './page/LienHe/LienHe';
+import LoadingPage from './components/Loading/LoadingPage';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter scrollRestoration="auto">
+      <LoadingPage />
       <Routes>
         <Route path="/" element={<CustomerTemplate />}>
-          <Route index element={<HomePage />}></Route>
+          <Route
+            index
+            element={
+              <HideHeader>
+                <HomePage />
+              </HideHeader>
+            }
+          ></Route>
           <Route path="/detail" element={<DetailProduct />}></Route>
           <Route
             path="/ve-chung-toi"

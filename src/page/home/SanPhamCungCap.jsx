@@ -1,5 +1,6 @@
 import { Carousel } from 'antd';
 import React, { useRef } from 'react';
+import { DesktopReponsive } from '../../HOC/reponsive';
 const contentStyle = {
   padding: '20px',
 };
@@ -64,7 +65,20 @@ const SanPhamCungCap = ({ dataSanPhamCungCap }) => {
           >
             <i className="fa-solid fa-angles-left"></i>
           </span>
-          <Carousel ref={refCarou} slidesToShow={4} dots={false}>
+          <Carousel
+            autoplay
+            ref={refCarou}
+            slidesToShow={4}
+            responsive={[
+              {
+                breakpoint: 639,
+                settings: {
+                  slidesToShow: 3,
+                },
+              },
+            ]}
+            dots={false}
+          >
             {renderSanPhamCungCap()}
           </Carousel>
         </div>

@@ -43,6 +43,17 @@ const HeaderVeChungToiMobile = () => {
         </p>
         <RightOutlined style={{ fontSize: 16 }} className="font-bold" />
       </div>
+      <div
+        onClick={() => {
+          navigate('/ve-chung-toi');
+        }}
+        className="flex justify-between items-center"
+      >
+        <p className="font-semibold text-base">
+          {content?.headerPage?.titlePage['2']}
+        </p>
+        <RightOutlined style={{ fontSize: 16 }} className="font-bold" />
+      </div>
     </div>
   );
 };

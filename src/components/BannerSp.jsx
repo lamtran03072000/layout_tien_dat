@@ -2,7 +2,7 @@ import React from 'react';
 
 const BannerSp = ({ content }) => {
   return (
-    <div className="relative lg:h-[85vh]">
+    <div className="relative lg:h-[55vh]">
       <img
         src="./img/banner_sp.png"
         alt=""

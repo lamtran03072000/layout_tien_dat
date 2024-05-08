@@ -33,7 +33,6 @@ export default function Header() {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const { content } = useSelector((state) => state.contentPageSlice);
-
   const { isOpenHeaderSp, activeHeader, isOnHeaderSp } = useSelector(
     (state) => state.animationSlice,
   );
@@ -58,7 +57,6 @@ export default function Header() {
       dispatch(getContentPageThunk(language));
     }
   }, []);
-  console.log('isOpenHeaderSp: ', isOpenHeaderSp);
   return (
     <div className="absolute w-full z-10">
       <div className="container_td header_td grid_td ">
@@ -79,12 +77,12 @@ export default function Header() {
                   dispatch(setActiveHeaderAction(0));
                 }}
                 to={'/'}
-                className="flex-1"
+                className=" "
               >
                 {content?.headerPage?.titlePage['1']}
               </NavLink>
               <NavLink
-                className="flex-1"
+                className="   "
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(1));
                 }}
@@ -93,7 +91,7 @@ export default function Header() {
                 {content?.headerPage?.titlePage['2']}
               </NavLink>
               <NavLink
-                className="flex-1"
+                className="   "
                 to="/list-product"
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(2));
@@ -106,7 +104,7 @@ export default function Header() {
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(3));
                 }}
-                className="flex-1"
+                className="   "
               >
                 {content?.headerPage?.titlePage['4']}
               </NavLink>

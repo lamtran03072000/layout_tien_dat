@@ -53,16 +53,19 @@ const HeaderMain = () => {
         </p>
         <RightOutlined style={{ fontSize: 16 }} className="font-bold" />
       </div>
-      <div className="flex justify-between items-center">
+      <div
+        onClick={() => {
+          // navigate('/');
+          window.location.href = '/lien-he';
+        }}
+        className="flex justify-between items-center"
+      >
         <p className="font-semibold text-base">
           {content?.headerPage?.titlePage['4']}
         </p>
         <RightOutlined style={{ fontSize: 16 }} className="font-bold" />
       </div>
-      <div className="flex justify-between items-center">
-        <p className="font-semibold text-base">
-          {content?.headerPage?.titlePage['5']}
-        </p>
+      <div className="flex justify-center items-center">
         <div className="flex space-x-3">
           <div
             onClick={() => {

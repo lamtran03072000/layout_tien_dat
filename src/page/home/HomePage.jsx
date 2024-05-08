@@ -7,6 +7,7 @@ import TuLieuHinhAnh from './TuLieuHinhAnh';
 import SanPhamCungCap from './SanPhamCungCap';
 import BanMuonBietThem from '../../components/BanMuonBietThem';
 import { useSelector } from 'react-redux';
+import QuyTrinhGiaoHang from './QuyTrinhGiaoHang';
 
 const HomePage = () => {
   const { content } = useSelector((state) => state.contentPageSlice);
@@ -18,10 +19,13 @@ const HomePage = () => {
       <Number dataNumber={content.homePage?.number} />
       <SanPhamCungCap dataSanPhamCungCap={content.homePage?.sanPhamCungCap} />
       <LinhVucUngDung dataLinhVucUngDung={content.homePage?.linhVucUngDung} />
+      <QuyTrinhGiaoHang />
       <TuLieuHinhAnh dataTuLieuHinhAnh={content.homePage?.tuLieuHinhAnh} />
       <BanMuonBietThem
         dataBanMuonBietThem={content.homePage?.banMuonBietThem}
       />
+
+      {/* <div dangerouslySetInnerHTML={{ __html: zaloWidget }} /> */}
     </div>
   );
 };

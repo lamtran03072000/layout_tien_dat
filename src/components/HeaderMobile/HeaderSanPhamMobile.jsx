@@ -127,7 +127,15 @@ const HeaderSanPhamMobile = () => {
       );
     });
   };
-  return <div className="flex flex-wrap items-start">{renderListSP()}</div>;
+
+  return (
+    <div>
+      <button className="hidden button_td lg:block lg:text-base font-bold w-3/4 mx-auto mb-4">
+        <a href="/list-product">Xem tất cả sản phẩm</a>
+      </button>
+      <div className="flex flex-wrap items-start">{renderListSP()}</div>
+    </div>
+  );
 };
 
 export default HeaderSanPhamMobile;

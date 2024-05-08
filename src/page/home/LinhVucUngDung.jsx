@@ -2,38 +2,6 @@ import React from 'react';
 import parse from 'html-react-parser';
 import { DesktopReponsive, MobileReponsive } from '../../HOC/reponsive';
 
-const dataLinhVucUngDung = [
-  {
-    img: './img/LinhVucUngDung/xay_dung.png',
-    title: ' Ngành Xây Dựng',
-  },
-  {
-    img: './img/LinhVucUngDung/dienlanh.png',
-    title: ' Ngành Điện Lạnh',
-  },
-  {
-    img: './img/LinhVucUngDung/giayda.png',
-    title: 'Công Nghiệp Giày Da',
-  },
-  {
-    img: './img/LinhVucUngDung/may.png',
-    title: ' Công Nghệ May',
-  },
-  {
-    img: './img/LinhVucUngDung/go.png',
-    title: ' Công Nghệ Gỗ',
-  },
-  {
-    img: './img/LinhVucUngDung/giadung.png',
-    title: (
-      <>
-        <p>Công Nghiệp Sản Xuất</p>
-        <p>Hàng Gia Dụng</p>
-      </>
-    ),
-  },
-];
-
 const LinhVucUngDung = ({ dataLinhVucUngDung }) => {
   const renderLinhVucUngDungDesktop = () => {
     const classes = [
@@ -93,7 +61,7 @@ const LinhVucUngDung = ({ dataLinhVucUngDung }) => {
 
   return (
     dataLinhVucUngDung && (
-      <div className="container_td  section space-y-10">
+      <div className="container_td  section space-y-10" id="linhVucUngDung">
         <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center">
           {dataLinhVucUngDung.title}
         </h3>
