@@ -18,9 +18,6 @@ const QuyTrinhGiaoHang = () => {
     let isActive = Number(stepRow) == step;
     return (
       <div
-        onClick={() => {
-          setStep(stepRow);
-        }}
         className={`flex space-x-20 lg:space-x-10 ${
           stepRow == '04' ? '' : 'border-b'
         }  py-12 lg:py-8 items-center font-semibold ${

@@ -12,71 +12,47 @@ const FooterMobile = () => {
     <div className="section pb-0">
       <div className="border-t shadow space-y-6 pt-6  ">
         <div className="flex justify-center items-center">
-          <img src="./img/footer_logo.png" alt="" width={94} height={102} />
+          <img src="./img/footer_logo.png" alt="" width={105} height={132} />
         </div>
         <div className=" border-b border-[#585858] space-y-6 pb-6 color_text_content">
-          <div className="container_td flex justify-between items-start">
-            <div className="space-y-2 flex flex-col">
-              <p
-                onClick={() => {
-                  navigateScrool('/', '');
-                }}
-              >
-                Trang chủ
-              </p>
-              <p
-                onClick={() => {
-                  navigateScrool('/list-product', '');
-                }}
-              >
-                Sản phẩm
-              </p>
-              <p
-                onClick={() => {
-                  navigateScrool('/ve-chung-toi', 'giaTriCotLoi');
-                }}
-              >
-                Giá trị cốt lõi
-              </p>
-              <p
-                onClick={() => {
-                  navigateScrool('/', 'linhVucUngDung');
-                }}
-              >
-                Lĩnh vực ứng dụng
-              </p>
-              <p
-                onClick={() => {
-                  navigateScrool('/ve-chung-toi', 'tuLieuHinhAnhAbout');
-                }}
-              >
-                Tư liệu hình ảnh
-              </p>
+          <div className="container_td flex justify-between space-x-7">
+            <div className="w-1/2 space-y-7">
+              <div className=" space-y-2">
+                <p className="font-bold text-base">Trang chủ</p>
+                <p>Lời mở đầu</p>
+                <p>Sản phẩm chúng tôi cung cấp</p>
+                <p>Lĩnh vực ứng dụng</p>
+                <p>Thư viện hình ảnh</p>
+              </div>
+              <div className=" space-y-2">
+                <p className="font-bold text-base">Sản phẩm</p>
+                <p>PE Foam</p>
+                <p>Ống gen</p>
+                <p>Ống giấy</p>
+                <p>Xốp khí</p>
+                <p>Băng keo</p>
+                <p>Màng CO</p>
+                <p>Xốp EPS</p>
+              </div>
             </div>
-            <div className="space-y-2 ">
-              <p>PE Foam</p>
-              <p>Ống Gen</p>
-              <p>Ống Giấy</p>
-              <p>Xốp Khí</p>
-              <p>Băng Keo</p>
-            </div>
-            <div className="space-y-2 ">
-              <p>Mảng CO</p>
-              <p>Xốp EPS</p>
-              <p
-                onClick={() => {
-                  navigateScrool('/tuyen-dung', '');
-                }}
-              >
-                Tuyển dụng
-              </p>
-              <p
-                onClick={() => {
-                  navigateScrool('/lien-he', '');
-                }}
-              >
-                Liên hệ
-              </p>
+            <div className="w-1/2  space-y-7">
+              <div className=" space-y-2">
+                <p className="font-bold text-base">Về chúng tôi</p>
+                <p>Giá trị cốt lõi</p>
+                <p>Thư viện hình ảnh</p>
+              </div>
+              <div className=" space-y-2">
+                <p className="font-bold text-base">Hỗ trợ khách hàng</p>
+                <p>Thông tin</p>
+                <p>Chính sách</p>
+                <p>Form liên hệ</p>
+              </div>
+              <div className=" space-y-2">
+                <p className="font-bold text-base">Tuyển Dụng </p>
+                <p>Tại sao làm việc tại Đại Tiến Đạt</p>
+                <p>Giá trị tại Đại Tiến Đạt</p>
+                <p>Các vị trí tuyển dụng</p>
+              </div>
             </div>
           </div>
           <div className="text-3xl space-x-3 font-bold container_td flex items-center justify-center">

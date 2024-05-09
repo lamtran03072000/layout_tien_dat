@@ -101,6 +101,9 @@
   p {
     font-size: 12px;
   }
+  .text-3xl p {
+    @apply text-xl;
+  }
   .container_td {
     max-width: 375px;
     width: 90%;
@@ -124,7 +127,6 @@
   }
   .l-text p {
     font-size: 20px;
-    font-weight: 300;
     color: white;
   }
   .xl-text p {

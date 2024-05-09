@@ -15,56 +15,44 @@ const FooterPage = () => {
             <div className="col-start-1 col-end-3">
               <img src="./img/footer_logo.png" alt="" />
             </div>
-            <div className="col-start-6 col-end-13 flex justify-between">
-              <div className=" space-y-2 flex flex-col">
-                <NavLink to="/">Trang chủ</NavLink>
-                <NavLink to="/list-product">Sản phẩm</NavLink>
-                <p
-                  onClick={() => {
-                    navigateScrool('/ve-chung-toi', 'giaTriCotLoi');
-                  }}
-                >
-                  Giá trị cốt lõi
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/', 'linhVucUngDung');
-                  }}
-                >
-                  Lĩnh vực ứng dụng
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/ve-chung-toi', 'tuLieuHinhAnhAbout');
-                  }}
-                >
-                  Tư liệu hình ảnh
-                </p>
+            <div className="col-start-4 col-end-13 flex justify-between  font-light ">
+              <div className=" space-y-2 flex-1">
+                <p className="font-bold">Trang chủ</p>
+                <p>Lời mở đầu</p>
+                <p>Sản phẩm chúng tôi cung cấp</p>
+                <p>Lĩnh vực ứng dụng</p>
+                <p>Thư viện hình ảnh</p>
               </div>
-              <div className=" space-y-2 ">
+
+              <div className=" space-y-2 flex-1">
+                <p className="font-bold">Về chúng tôi</p>
+                <p>Giá trị cốt lõi</p>
+                <p>Thư viện hình ảnh</p>
+              </div>
+
+              <div className=" space-y-2 mr-9">
+                <p className="font-bold">Sản phẩm</p>
                 <p>PE Foam</p>
-                <p>Ống Gen</p>
-                <p>Ống Giấy</p>
-                <p>Xốp Khí</p>
-                <p>Băng Keo</p>
-              </div>
-              <div className=" space-y-2 ">
-                <p>Mảng CO</p>
+                <p>Ống gen</p>
+                <p>Ống giấy</p>
+                <p>Xốp khí</p>
+                <p>Băng keo</p>
+                <p>Màng CO</p>
                 <p>Xốp EPS</p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/tuyen-dung', '');
-                  }}
-                >
-                  Tuyển dụng
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/lien-he', '');
-                  }}
-                >
-                  Liên hệ
-                </p>
+              </div>
+
+              <div className=" space-y-2 flex-1">
+                <p className="font-bold">Hỗ trợ khách hàng</p>
+                <p>Thông tin</p>
+                <p>Chính sách</p>
+                <p>Form liên hệ</p>
+              </div>
+
+              <div className=" space-y-2 flex-1">
+                <p className="font-bold">Tuyển Dụng </p>
+                <p>Tại sao làm việc tại Đại Tiến Đạt</p>
+                <p>Giá trị tại Đại Tiến Đạt</p>
+                <p>Các vị trí tuyển dụng</p>
               </div>
             </div>
           </div>
@@ -85,3 +73,27 @@ const FooterPage = () => {
 };
 
 export default FooterPage;
+
+{
+  /* <p
+onClick={() => {
+  navigateScrool('/ve-chung-toi', 'giaTriCotLoi');
+}}
+>
+Giá trị cốt lõi
+</p>
+<p
+onClick={() => {
+  navigateScrool('/', 'linhVucUngDung');
+}}
+>
+Lĩnh vực ứng dụng
+</p>
+<p
+onClick={() => {
+  navigateScrool('/ve-chung-toi', 'tuLieuHinhAnhAbout');
+}}
+>
+Tư liệu hình ảnh
+</p> */
+}

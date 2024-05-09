@@ -66,9 +66,9 @@ export default function Header() {
           </NavLink>
         </div>
         <div className="col-start-5 col-span-8 relative  mb-auto">
-          <div className="absolute w-full h-full z-50">
+          <div className="absolute w-full h-full z-50 ">
             <div
-              className={`w-full  flex justify-between    font-semibold  ${
+              className={`w-full   flex justify-between    font-semibold  ${
                 isOpenHeaderSp ? 'color_text_content' : 'text-white'
               } cursor-pointer duration-500`}
             >
