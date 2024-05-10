@@ -2,7 +2,7 @@ import React from 'react';
 
 const ThongTinSp = () => {
   return (
-    <div className="container_td section">
+    <div className="container_td section" id="ttSpDetail">
       <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center mb-12">
         Thông tin sản phẩm
       </h3>

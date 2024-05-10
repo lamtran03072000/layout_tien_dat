@@ -27,7 +27,14 @@ function App() {
               </HideHeader>
             }
           ></Route>
-          <Route path="/detail" element={<DetailProduct />}></Route>
+          <Route
+            path="/detail"
+            element={
+              <HideHeader>
+                <DetailProduct />
+              </HideHeader>
+            }
+          ></Route>
           <Route
             path="/ve-chung-toi"
             element={

@@ -39,7 +39,7 @@ const FormLienHe = () => {
   });
   return (
     <div className="container_td">
-      <div className="grid_td section color_text_content">
+      <div className="grid_td section color_text_content" id="formLienHe">
         <div className="grid col-start-3 col-end-11 lg:col-start-1 lg:col-end-5">
           <h3 className="text-3xl lg:text-xl font-bold  mb-10">
             Gửi thông tin cho chúng tôi

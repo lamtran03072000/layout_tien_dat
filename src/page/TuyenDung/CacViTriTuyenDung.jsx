@@ -31,7 +31,7 @@ const CacViTriTuyenDung = ({ dataCacViTriTuyenDung }) => {
   };
 
   return (
-    <div className=" section ">
+    <div className=" section " id="cvtTd">
       <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center mb-12 lg:mb-3">
         {parse(`${dataCacViTriTuyenDung?.title}`)}
       </h3>

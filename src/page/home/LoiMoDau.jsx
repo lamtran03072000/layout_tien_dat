@@ -5,7 +5,7 @@ import ImgFetch from '../../components/ImgFetch/ImgFetch';
 
 const LoiMoDau = ({ dataLoiMoDau }) => {
   return (
-    <div className="container_td section">
+    <div className="container_td section" id="loiMoDau">
       <div className="grid_td grid lg:space-y-6">
         <div className="col-start-1 col-end-7 lg:col-start-1 lg:col-end-5 space-y-8 lg:space-y-5 my-auto">
           <h3 className="font-bold text-3xl lg:text-xl color_text_content">

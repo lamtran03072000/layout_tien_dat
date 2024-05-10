@@ -8,7 +8,6 @@ import GiaTriTaiDTD from './GiaTriTaiDTD';
 
 const TuyenDung = () => {
   const { content } = useSelector((state) => state.contentPageSlice);
-  console.log('content: ', content);
 
   const renderContent = () => {
     return (

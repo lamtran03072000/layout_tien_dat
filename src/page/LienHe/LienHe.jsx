@@ -20,7 +20,10 @@ const LienHe = () => {
   return (
     <div>
       <BannerSp content={renderContent()} />
-      <div className="grid_td section color_text_content  container_td">
+      <div
+        className="grid_td section color_text_content  container_td"
+        id="ttlienhe"
+      >
         <div className="grid col-start-3 col-end-11 lg:col-start-1 lg:col-end-5">
           <h3 className="text-3xl lg:text-xl font-bold  mb-10">Liên Hệ</h3>
           <div className="space-y-5 lg:space-y-3">

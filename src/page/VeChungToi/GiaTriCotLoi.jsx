@@ -39,7 +39,7 @@ const GiaTriCotLoi = () => {
         <div className="lg:w-1/2 lg:mb-4 lg:px-2">
           <div
             key={index}
-            className="w-[275px]  lg:w-[100%] h-[275px] lg:h-[156px] relative  transition  duration-400"
+            className="w-[275px]  lg:w-[100%] h-[275px] lg:h-[156px] relative  transition  duration-400 group"
           >
             <img
               src="./img/giatricotloi.png"
@@ -47,7 +47,7 @@ const GiaTriCotLoi = () => {
               alt=""
             />
             <div
-              className={`absolute w-full h-full top-0 flex flex-col items-center justify-center space-y-5  ${
+              className={`absolute w-full h-full top-0 flex flex-col items-center justify-center space-y-5 group-hover:opacity-0 ${
                 step == index + 1 ? 'opacity-0 ' : ''
               } duration-300`}
             >
@@ -58,7 +58,7 @@ const GiaTriCotLoi = () => {
             </div>
             <div className="absolute w-full h-full top-0 flex flex-col items-center justify-center space-y-5   duration-200">
               <p
-                className={`opacity-0  ${
+                className={`opacity-0 group-hover:opacity-100 ${
                   step == index + 1 ? 'opacity-100 ' : ''
                 }  text-white px-4 text-center`}
               >

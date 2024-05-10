@@ -11,7 +11,7 @@ const TuLieuHinhAnh = ({ dataTuLieuHinhAnh }) => {
   };
   return (
     dataTuLieuHinhAnh && (
-      <div className="section space-y-10 lg:space-y-4">
+      <div className="section space-y-10 lg:space-y-4" id="tlhahp">
         <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center">
           {dataTuLieuHinhAnh.title}
         </h3>

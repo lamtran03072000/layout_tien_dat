@@ -11,7 +11,6 @@ const HideHeader = ({ children }) => {
   const dispatch = useDispatch();
 
   const location = useLocation();
-  console.log('location: ', location);
   const pathname = location.pathname;
 
   const [searchParams, setSearchParams] = useSearchParams();

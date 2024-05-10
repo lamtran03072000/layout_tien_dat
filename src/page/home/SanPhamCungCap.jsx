@@ -40,7 +40,10 @@ const SanPhamCungCap = ({ dataSanPhamCungCap }) => {
   };
   return (
     dataSanPhamCungCap && (
-      <div className="text-center space-y-10 lg:space-y-3 section container_td">
+      <div
+        className="text-center space-y-10 lg:space-y-3 section container_td"
+        id="sanPhamcc"
+      >
         <div className="flex justify-between color_text_content ">
           <h3 className="text-3xl lg:text-xl font-bold">
             {dataSanPhamCungCap.title}

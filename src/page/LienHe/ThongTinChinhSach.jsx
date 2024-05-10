@@ -4,7 +4,7 @@ import ShowDesChinhSach from './ShowDesChinhSach';
 const ThongTinChinhSach = () => {
   return (
     <div className="container_td">
-      <div className="grid_td section color_text_content">
+      <div className="grid_td section color_text_content" id="chinhSachLienHe">
         <div className="grid col-start-3 col-end-11 lg:col-start-1 lg:col-end-5">
           <h3 className="text-3xl color_text_content font-bold mb-12 lg:text-xl">
             Thông Tin Chính Sách

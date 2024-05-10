@@ -19,39 +19,160 @@ const FooterMobile = () => {
             <div className="w-1/2 space-y-7">
               <div className=" space-y-2">
                 <p className="font-bold text-base">Trang chủ</p>
-                <p>Lời mở đầu</p>
-                <p>Sản phẩm chúng tôi cung cấp</p>
-                <p>Lĩnh vực ứng dụng</p>
-                <p>Thư viện hình ảnh</p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/', 'loiMoDau');
+                  }}
+                >
+                  Lời mở đầu
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/', 'sanPhamcc');
+                  }}
+                >
+                  Sản phẩm chúng tôi cung cấp
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/', 'linhVucUngDung');
+                  }}
+                >
+                  Lĩnh vực ứng dụng
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/', 'tlhahp');
+                  }}
+                >
+                  Thư viện hình ảnh
+                </p>
               </div>
               <div className=" space-y-2">
-                <p className="font-bold text-base">Sản phẩm</p>
-                <p>PE Foam</p>
-                <p>Ống gen</p>
-                <p>Ống giấy</p>
-                <p>Xốp khí</p>
-                <p>Băng keo</p>
-                <p>Màng CO</p>
-                <p>Xốp EPS</p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/list-product', 'dsspPageSp');
+                  }}
+                  className="font-bold text-base"
+                >
+                  Sản phẩm
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/detail', 'ttSpDetail');
+                  }}
+                >
+                  PE Foam
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/detail', 'ttSpDetail');
+                  }}
+                >
+                  Ống gen
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/detail', 'ttSpDetail');
+                  }}
+                >
+                  Ống giấy
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/detail', 'ttSpDetail');
+                  }}
+                >
+                  Xốp khí
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/detail', 'ttSpDetail');
+                  }}
+                >
+                  Băng keo
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/detail', 'ttSpDetail');
+                  }}
+                >
+                  Màng CO
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/detail', 'ttSpDetail');
+                  }}
+                >
+                  Xốp EPS
+                </p>
               </div>
             </div>
             <div className="w-1/2  space-y-7">
               <div className=" space-y-2">
                 <p className="font-bold text-base">Về chúng tôi</p>
-                <p>Giá trị cốt lõi</p>
-                <p>Thư viện hình ảnh</p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/ve-chung-toi', 'giaTriCotLoi');
+                  }}
+                >
+                  Giá trị cốt lõi
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/ve-chung-toi', 'tuLieuHinhAnhAbout');
+                  }}
+                >
+                  Thư viện hình ảnh
+                </p>
               </div>
               <div className=" space-y-2">
                 <p className="font-bold text-base">Hỗ trợ khách hàng</p>
-                <p>Thông tin</p>
-                <p>Chính sách</p>
-                <p>Form liên hệ</p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/lien-he', 'ttlienhe');
+                  }}
+                >
+                  Thông tin
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/lien-he', 'chinhSachLienHe');
+                  }}
+                >
+                  Chính sách
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/lien-he', 'formLienHe');
+                  }}
+                >
+                  Form liên hệ
+                </p>
               </div>
               <div className=" space-y-2">
                 <p className="font-bold text-base">Tuyển Dụng </p>
-                <p>Tại sao làm việc tại Đại Tiến Đạt</p>
-                <p>Giá trị tại Đại Tiến Đạt</p>
-                <p>Các vị trí tuyển dụng</p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/tuyen-dung', 'tslvTd');
+                  }}
+                >
+                  Tại sao làm việc tại Đại Tiến Đạt
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/tuyen-dung', 'giatriDTD');
+                  }}
+                >
+                  Giá trị tại Đại Tiến Đạt
+                </p>
+                <p
+                  onClick={() => {
+                    navigateScrool('/tuyen-dung', 'cvtTd');
+                  }}
+                >
+                  Các vị trí tuyển dụng
+                </p>
               </div>
             </div>
           </div>
