@@ -3,7 +3,34 @@ import { useFormik } from 'formik';
 import { mailService } from '../../service/mailService';
 import { message, notification } from 'antd';
 import * as Yup from 'yup';
+import { useSelector } from 'react-redux';
+
+const titleLg = {
+  vn: 'Gửi thông tin cho chúng tôi',
+  en: 'Send us information',
+};
+
+const formLg = {
+  vn: {
+    name: 'Họ tên',
+    number: 'Điện thoại',
+    email: 'Email',
+    title: 'Tiêu đề',
+    content: 'Nội dung',
+    button: 'Gửi thông tin',
+  },
+  en: {
+    name: 'Full name',
+    number: 'Phone',
+    email: 'Email',
+    title: 'Title',
+    content: 'Content',
+    button: 'Send information',
+  },
+};
 const FormLienHe = () => {
+  const { content, language } = useSelector((state) => state.contentPageSlice);
+
   const formLienHe = useFormik({
     initialValues: {
       hoTen: '',
@@ -34,7 +61,6 @@ const FormLienHe = () => {
         });
         resetForm();
       } catch (error) {}
-      console.log('value: ', value);
     },
   });
   return (
@@ -42,14 +68,14 @@ const FormLienHe = () => {
       <div className="grid_td section color_text_content" id="formLienHe">
         <div className="grid col-start-3 col-end-11 lg:col-start-1 lg:col-end-5">
           <h3 className="text-3xl lg:text-xl font-bold  mb-10">
-            Gửi thông tin cho chúng tôi
+            {titleLg[language]}
           </h3>
           <form onSubmit={formLienHe.handleSubmit} className="space-y-5">
             <div>
               <input
                 type="text"
                 className="p-5 border border-[#E5E5E5] w-full"
-                placeholder="Họ tên"
+                placeholder={formLg[language].name}
                 name="hoTen"
                 value={formLienHe.values.hoTen}
                 onChange={formLienHe.handleChange}
@@ -68,7 +94,7 @@ const FormLienHe = () => {
               <input
                 type="text"
                 className="p-5 border border-[#E5E5E5] w-full"
-                placeholder="Điện Thoại"
+                placeholder={formLg[language].number}
                 name="sdt"
                 value={formLienHe.values.sdt}
                 onChange={formLienHe.handleChange}
@@ -87,7 +113,7 @@ const FormLienHe = () => {
               <input
                 type="text"
                 className="p-5 border border-[#E5E5E5] w-full"
-                placeholder="Email"
+                placeholder={formLg[language].email}
                 name="email"
                 value={formLienHe.values.email}
                 onChange={formLienHe.handleChange}
@@ -106,7 +132,7 @@ const FormLienHe = () => {
               <input
                 type="text"
                 className="p-5 border border-[#E5E5E5] w-full"
-                placeholder="Tiêu đề"
+                placeholder={formLg[language].title}
                 name="tieuDe"
                 value={formLienHe.values.tieuDe}
                 onChange={formLienHe.handleChange}
@@ -123,7 +149,7 @@ const FormLienHe = () => {
             </div>
             <div>
               <textarea
-                placeholder="Nội dung"
+                placeholder={formLg[language].content}
                 className="p-5 border border-[#E5E5E5] w-full"
                 name="noiDung"
                 value={formLienHe.values.noiDung}
@@ -145,7 +171,7 @@ const FormLienHe = () => {
               type="submit"
               className="p-5 border border-[#E5E5E5] w-full"
             >
-              Gửi thông tin
+              {formLg[language].button}
             </button>
           </form>
         </div>

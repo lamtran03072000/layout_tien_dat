@@ -11,6 +11,7 @@ import {
 } from '../../store/Animation/animationSlice';
 import { useSelector } from 'react-redux';
 import { getContentPageThunk } from '../../store/contentPage/contentPageThunk';
+import { changeLanguageAction } from '../../store/contentPage/contentPageSlice';
 const dataActiveHeader = [
   {
     id: 0,
@@ -32,7 +33,7 @@ const dataActiveHeader = [
 export default function Header() {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { content } = useSelector((state) => state.contentPageSlice);
+  const { content, language } = useSelector((state) => state.contentPageSlice);
   const { isOpenHeaderSp, activeHeader, isOnHeaderSp } = useSelector(
     (state) => state.animationSlice,
   );
@@ -47,6 +48,7 @@ export default function Header() {
   const handleSwitchLanguage = (lg) => {
     setSearchParams({ language: lg });
     dispatch(getContentPageThunk(lg));
+    dispatch(changeLanguageAction(lg));
   };
   useEffect(() => {
     handleOpenHeader();
@@ -55,13 +57,14 @@ export default function Header() {
     const language = searchParams.get('language');
     if (language) {
       dispatch(getContentPageThunk(language));
+      dispatch(changeLanguageAction(language));
     }
   }, []);
   return (
     <div className="absolute w-full z-10">
       <div className="container_td header_td grid_td ">
         <div className="col-span-2">
-          <NavLink to={'/'}>
+          <NavLink to={`/?language=${language}`}>
             <SvgLogo w={177} h={193} />
           </NavLink>
         </div>
@@ -76,7 +79,7 @@ export default function Header() {
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(0));
                 }}
-                to={'/'}
+                to={`/?language=${language}`}
                 className=" "
               >
                 {content?.headerPage?.titlePage['1']}
@@ -86,13 +89,13 @@ export default function Header() {
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(1));
                 }}
-                to="/ve-chung-toi"
+                to={`/ve-chung-toi?language=${language}`}
               >
                 {content?.headerPage?.titlePage['2']}
               </NavLink>
               <NavLink
                 className="   "
-                to="/list-product"
+                to={`/list-product?language=${language}`}
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(2));
                 }}
@@ -100,7 +103,7 @@ export default function Header() {
                 {content?.headerPage?.titlePage['3']}
               </NavLink>
               <NavLink
-                to={'/lien-he'}
+                to={`/lien-he?language=${language}`}
                 onMouseEnter={() => {
                   dispatch(setActiveHeaderAction(3));
                 }}
@@ -114,14 +117,14 @@ export default function Header() {
                     handleSwitchLanguage('en');
                   }}
                 >
-                  <img className="flag" src="./img/flag_vn.png" alt="" />
+                  <img className="flag" src="/./img/flag_vn.png" alt="" />
                 </div>
                 <div
                   onClick={() => {
                     handleSwitchLanguage('vn');
                   }}
                 >
-                  <img className="flag" src="./img/flag_en.png" alt="" />
+                  <img className="flag" src="/./img/flag_en.png" alt="" />
                 </div>
               </div>
             </div>

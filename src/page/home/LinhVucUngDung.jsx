@@ -1,6 +1,7 @@
 import React from 'react';
 import parse from 'html-react-parser';
 import { DesktopReponsive, MobileReponsive } from '../../HOC/reponsive';
+import ImgFetch from '../../components/ImgFetch/ImgFetch';
 
 const LinhVucUngDung = ({ dataLinhVucUngDung }) => {
   const renderLinhVucUngDungDesktop = () => {
@@ -15,15 +16,11 @@ const LinhVucUngDung = ({ dataLinhVucUngDung }) => {
 
       return (
         <div key={index} className={`${classDf}`}>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center ">
             <div className="w-[177px] h-[177px] rounded-full overflow-hidden">
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-full object-cover"
-              />
+              <ImgFetch imgId={item.img} />
             </div>
-            <div className="text-center mt-3 text-[18px] font-bold whitespace-nowrap">
+            <div className="text-center mt-3 text-[18px] font-bold p w-[120%]">
               {parse(`${item.title}`)}
             </div>
           </div>
@@ -44,13 +41,9 @@ const LinhVucUngDung = ({ dataLinhVucUngDung }) => {
         <div key={index} className={`${classDf}`}>
           <div className="flex flex-col items-center">
             <div className="w-[156px] h-[156px] rounded-full overflow-hidden">
-              <img
-                src={item.img}
-                alt=""
-                className="w-full h-full object-cover"
-              />
+              <ImgFetch imgId={item.img} />
             </div>
-            <div className="text-center mt-3 text-[18px] lg:text-base font-bold whitespace-nowrap">
+            <div className="text-center mt-3 text-[18px] lg:text-base font-bold w-[101%]">
               {parse(`${item.title}`)}
             </div>
           </div>

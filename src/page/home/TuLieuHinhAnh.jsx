@@ -1,7 +1,14 @@
 import React, { useRef } from 'react';
 import { Carousel } from 'antd';
-const contentStyle = {};
+import ImgFetch from '../../components/ImgFetch/ImgFetch';
+const contentStyle = {
+  margin: 0,
+  height: '100vh',
+  overflow: 'hidden',
+  background: 'red',
+};
 const TuLieuHinhAnh = ({ dataTuLieuHinhAnh }) => {
+  console.log('dataTuLieuHinhAnh: ', dataTuLieuHinhAnh);
   const refCarou = useRef(null);
   const handleNext = () => {
     refCarou.current.next();
@@ -30,24 +37,15 @@ const TuLieuHinhAnh = ({ dataTuLieuHinhAnh }) => {
             <i className="fa-solid fa-angles-left"></i>
           </span>
           <Carousel ref={refCarou} slidesToShow={1} dots={false}>
-            <div style={contentStyle}>
-              <img src="./img/tulieuhinhanh/1.png" alt="" />
-            </div>
-            <div style={contentStyle}>
-              <img src="./img/tulieuhinhanh/1.png" alt="" />
-            </div>
-            <div style={contentStyle}>
-              <img src="./img/tulieuhinhanh/1.png" alt="" />
-            </div>
-            <div style={contentStyle}>
-              <img src="./img/tulieuhinhanh/1.png" alt="" />
-            </div>
-            <div style={contentStyle}>
-              <img src="./img/tulieuhinhanh/1.png" alt="" />
-            </div>
-            <div style={contentStyle}>
-              <img src="./img/tulieuhinhanh/1.png" alt="" />
-            </div>
+            {dataTuLieuHinhAnh.listData.map((item) => {
+              return (
+                <div>
+                  <div style={contentStyle}>
+                    <ImgFetch imgId={item} />
+                  </div>
+                </div>
+              );
+            })}
           </Carousel>
         </div>
       </div>

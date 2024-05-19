@@ -1,7 +1,9 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Carousel } from 'antd';
 import { DesktopReponsive, MobileReponsive } from '../../HOC/reponsive';
 import { NavLink } from 'react-router-dom';
+import { sanPhamService } from '../../service/sanPhamService';
+import ImgFetch from '../../components/ImgFetch/ImgFetch';
 const contentStyle = {
   height: '170px',
   width: '275px',
@@ -30,31 +32,45 @@ const dataSanPhamKhac = [
 ];
 const SanPhamKhac = () => {
   const refCarou = useRef(null);
+  const [listSp, setListSp] = useState();
+  const fetchSpApi = async () => {
+    try {
+      const data = await sanPhamService.getListSp();
+      setListSp(data.data);
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  };
+  useEffect(() => {
+    fetchSpApi();
+  }, []);
   const renderSanPhamKhac = () => {
-    return dataSanPhamKhac.map((d, i) => {
+    return listSp?.map((d, i) => {
       return (
         <div key={i}>
           <div style={contentStyle}>
-            <img src={d.img} />
+            <ImgFetch imgId={d.imgMain} />
           </div>
         </div>
       );
     });
   };
   const renderSanPhamKhacMobile = () => {
-    return dataSanPhamKhac.map((d, i) => {
+    return listSp?.map((d, i) => {
       return (
         <div key={i}>
           <div style={contentStyleMobile}>
-            <img
-              src={d.img}
+            <div
               style={{
-                objectFit: 'cover',
                 width: '100%',
                 height: '100%',
                 borderRadius: '10px',
+                overflow: 'hidden',
               }}
-            />
+              className=""
+            >
+              <ImgFetch imgId={d.imgMain} />
+            </div>
           </div>
         </div>
       );

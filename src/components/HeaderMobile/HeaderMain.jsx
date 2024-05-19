@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { getContentPageThunk } from '../../store/contentPage/contentPageThunk';
 import { setActiveHeaderMobileAction } from '../../store/Animation/animationSlice';
+import { changeLanguageAction } from '../../store/contentPage/contentPageSlice';
 
 const HeaderMain = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const HeaderMain = () => {
   const handleSwitchLanguage = (lg) => {
     setSearchParams({ language: lg });
     dispatch(getContentPageThunk(lg));
+    dispatch(changeLanguageAction(lg));
   };
   const handleActiveHeader = (idActive) => {
     dispatch(setActiveHeaderMobileAction(idActive));
@@ -72,14 +74,14 @@ const HeaderMain = () => {
               handleSwitchLanguage('en');
             }}
           >
-            <img className="flag" src="./img/flag_vn.png" alt="" />
+            <img className="flag" src="/./img/flag_vn.png" alt="" />
           </div>
           <div
             onClick={() => {
               handleSwitchLanguage('vn');
             }}
           >
-            <img className="flag" src="./img/flag_en.png" alt="" />
+            <img className="flag" src="/./img/flag_en.png" alt="" />
           </div>
         </div>
       </div>

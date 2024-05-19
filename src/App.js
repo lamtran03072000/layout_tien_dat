@@ -28,7 +28,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/detail"
+            path="detail/:idSp"
             element={
               <HideHeader>
                 <DetailProduct />

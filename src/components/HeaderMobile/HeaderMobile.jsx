@@ -12,6 +12,7 @@ import {
 import HeaderMain from './HeaderMain';
 import HeaderVeChungToiMobile from './HeaderVeChungToiMobile';
 import HeaderSanPhamMobile from './HeaderSanPhamMobile';
+import { changeLanguageAction } from '../../store/contentPage/contentPageSlice';
 
 const dataActiveHeader = [
   {
@@ -35,6 +36,7 @@ const HeaderMobile = () => {
     const language = searchParams.get('language');
     if (language) {
       dispatch(getContentPageThunk(language));
+      dispatch(changeLanguageAction(language));
     }
   }, []);
   const handleOpenHeaderSp = () => {

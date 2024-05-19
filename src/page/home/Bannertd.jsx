@@ -8,6 +8,7 @@ const Bannertd = ({ dataBanner }) => {
       <img
         src="./img/ovl_banner.png"
         alt=""
+        loading="lazy"
         className="w-full h-full object-cover absolute top-0 left-0"
       />
       <div className="text-center xl-text  absolute w-full bottom-16 left-1/2 -translate-x-1/2">

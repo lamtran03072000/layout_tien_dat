@@ -4,7 +4,7 @@ const BannerSp = ({ content }) => {
   return (
     <div className="relative lg:h-[55vh]">
       <img
-        src="./img/banner_sp.png"
+        src="/./img/banner_sp.png"
         alt=""
         className="lg:w-full lg:h-full  object-cover"
       />

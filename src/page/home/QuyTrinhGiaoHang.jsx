@@ -1,7 +1,61 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
+const data = {
+  vn: [
+    {
+      icon: <i className="fa-solid fa-people-group"></i>,
+      step: '01',
+      content: 'Tiếp nhận yêu cầu khách hàng',
+    },
+    {
+      icon: <i className="fa-solid fa-comment-dots"></i>,
+      step: '02',
+      content: 'Tư vấn xem mẫu trực tiếp theo quy cách khách hàng yêu cầu',
+    },
+    {
+      icon: <i className="fa-solid fa-toilet-paper -rotate-90"></i>,
+      step: '03',
+      content: 'Tiến hành sản xuất hàng loạt',
+    },
+    {
+      icon: <i className="fa-solid fa-truck-fast"></i>,
+      step: '04',
+      content: 'Giao hàng tận nơi miễn phí',
+    },
+  ],
+  en: [
+    {
+      icon: <i className="fa-solid fa-people-group"></i>,
+      step: '01',
+      content: 'Receive customer requests',
+    },
+    {
+      icon: <i className="fa-solid fa-comment-dots"></i>,
+      step: '02',
+      content: 'Direct sample consultation as per customer request',
+    },
+    {
+      icon: <i className="fa-solid fa-toilet-paper -rotate-90"></i>,
+      step: '03',
+      content: 'Conducting mass production',
+    },
+    {
+      icon: <i className="fa-solid fa-truck-fast"></i>,
+      step: '04',
+      content: 'Free delivery',
+    },
+  ],
+};
+
+const title = {
+  vn: 'Quy trình đặt hàng',
+  en: 'Ordering process',
+};
 
 const QuyTrinhGiaoHang = () => {
   const [step, setStep] = useState('01');
+  const { content, language } = useSelector((state) => state.contentPageSlice);
 
   useEffect(() => {
     let count = 0;
@@ -50,6 +104,7 @@ const QuyTrinhGiaoHang = () => {
   return (
     <div className="relative">
       <img
+        loading="lazy"
         src="./img/quy-trinh-dat-hang/bg-quytrinh.png"
         alt=""
         className="absolute top-0 left-0 w-full h-full"
@@ -59,7 +114,7 @@ const QuyTrinhGiaoHang = () => {
         <div className="flex items-center">
           <div className="w-7/12 pr-10 lg:w-full lg:pr-0">
             <h3 className="font-bold text-3xl lg:text-xl text-white mb-12">
-              Quy trình đặt hàng
+              {title[language]}
             </h3>
             <div className="bg-gray-400">
               <div
@@ -69,29 +124,17 @@ const QuyTrinhGiaoHang = () => {
                 className="bg-yellow-400 h-0.5 duration-150"
               ></div>
             </div>
-            {renderStepGiaoHang(
-              <i className="fa-solid fa-people-group"></i>,
-              '01',
-              'Tiếp nhận yêu cầu khách hàng',
-            )}
-            {renderStepGiaoHang(
-              <i className="fa-solid fa-comment-dots"></i>,
-              '02',
-              'Tư vấn xem mẫu trực tiếp theo quy cách khách hàng yêu cầu',
-            )}
-            {renderStepGiaoHang(
-              <i className="fa-solid fa-box-open"></i>,
-              '03',
-              'Tiến hành sản xuất hàng loạt',
-            )}
-            {renderStepGiaoHang(
-              <i class="fa-solid fa-truck-fast"></i>,
-              '04',
-              'Giao hàng tận nơi miễn phí',
-            )}
+            {data[language].map((d, i) => {
+              return renderStepGiaoHang(d.icon, d.step, d.content);
+            })}
           </div>
-          <div className="w-5/12 lg:hidden">
-            <img src="./img/delivery.png" className=" w-full h-full " alt="" />
+          <div className="w-1/2 h-2/3 lg:hidden absolute -right-12 bottom-14">
+            <img
+              loading="lazy"
+              src="./img/delivery.png"
+              className=" w-full h-full "
+              alt=""
+            />
           </div>
         </div>
       </div>

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -29,5 +31,18 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        ul: {
+          listStyleType: theme('listStyleType.disc'), // Ví dụ: sử dụng dấu chấm cho danh sách
+          paddingLeft: theme('padding.12'),
+        },
+        li: {
+          marginBottom: theme('spacing.1'), // Khoảng cách giữa các mục li
+          // Thêm các styles khác bạn muốn áp dụng mặc định
+        },
+      });
+    }),
+  ],
 };

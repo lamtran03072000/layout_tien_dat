@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 const LoadingPage = () => {
   const { isLoading } = useSelector((state) => state.loadingSlice);
-  console.log('isLoading: ', isLoading);
   return (
     <div
       className={` h-full w-full bg-white bg-opacity-95 z-50 ${

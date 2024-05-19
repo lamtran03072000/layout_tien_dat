@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import { NavLink, useNavigate } from 'react-router-dom';
 import parse from 'html-react-parser';
-const ShowDesChinhSach = ({ children }) => {
+const ShowDesChinhSach = ({ children, data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -19,21 +19,14 @@ const ShowDesChinhSach = ({ children }) => {
         {children}
       </button>
       <Modal
-        title="Chính sách"
+        title={data?.title}
         open={isModalOpen}
         footer={false}
         onOk={handleOk}
         onCancel={handleCancel}
         width={'75%'}
       >
-        <div className="space-y-9 flex flex-col items-center">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore,
-          blanditiis quas! Sunt ducimus temporibus aspernatur tempora voluptas
-          vero eius unde hic veritatis dolorem! Placeat voluptatem beatae
-          consectetur voluptas itaque, soluta et nihil dolorum ut architecto
-          temporibus harum? Tenetur possimus molestias atque harum sequi labore
-          iusto ducimus reprehenderit, eligendi aperiam numquam!
-        </div>
+        <div>{parse(`${data?.detail}`)}</div>
       </Modal>
     </>
   );

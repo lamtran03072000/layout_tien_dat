@@ -1,103 +1,38 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import ImgFetch from '../ImgFetch/ImgFetch';
 
-const data = [
-  {
-    img: './img/Sanphamcungcap/1.png',
-    tenLoai: 'PE Foam',
-    sanPham: [
-      {
-        name: 'Cuộn',
-      },
-      {
-        name: 'HD/OOP',
-      },
-      {
-        name: 'Sản phẩm khác',
-      },
-    ],
-  },
-  {
-    img: './img/Sanphamcungcap/1.png',
-    tenLoai: 'Ống gen',
-    sanPham: [
-      {
-        name: 'Đơn',
-      },
-      {
-        name: 'Đôi',
-      },
-    ],
-  },
-  {
-    img: './img/Sanphamcungcap/1.png',
-    tenLoai: 'Ống giấy',
-    sanPham: [
-      {
-        name: 'Phi 77',
-      },
-      {
-        name: 'Sản phẩm khác',
-      },
-    ],
-  },
-  {
-    img: './img/Sanphamcungcap/1.png',
-    tenLoai: 'PE Foam',
-    sanPham: [
-      {
-        name: 'Cuộn',
-      },
-      {
-        name: 'Sản phẩm khác',
-      },
-    ],
-  },
-  {
-    img: './img/Sanphamcungcap/1.png',
-    tenLoai: 'PE Foam',
-    sanPham: [
-      {
-        name: 'Cuộn',
-      },
-    ],
-  },
-  {
-    img: './img/Sanphamcungcap/1.png',
-    tenLoai: 'PE Foam',
-    sanPham: [
-      {
-        name: 'Sản phẩm khác',
-      },
-    ],
-  },
-  {
-    img: './img/Sanphamcungcap/1.png',
-    tenLoai: 'PE Foam',
-    sanPham: [
-      {
-        name: 'Cuộn',
-      },
-      {
-        name: 'HD/OOP',
-      },
-      {
-        name: 'Sản phẩm khác',
-      },
-    ],
-  },
-];
 const HeaderSanPham = () => {
+  const { content, language } = useSelector((state) => state.contentPageSlice);
+
   const renderListSP = () => {
-    return data.map((item, index) => {
+    let langueDinamicKey = {
+      en: 'En',
+      vn: 'Vn',
+    };
+
+    let nameSp = 'name' + langueDinamicKey[language];
+    let nameDssp = 'name' + langueDinamicKey[language];
+
+    return content.dssp.map((ds, index) => {
       return (
-        <div key={index} className="flex flex-col items-center space-y-3 w-1/4">
-          <img width={141} height={141} src={item.img} alt="" />
-          <p>{item.tenLoai}</p>
+        <div
+          key={index}
+          className="flex flex-col items-center space-y-3 w-1/4 "
+        >
+          <div className="w-[141px] h-[141px]">
+            <ImgFetch imgId={ds.img} />
+          </div>
+          <p>{ds[nameDssp]}</p>
           <div className="flex space-x-3">
-            {item.sanPham.map((sp, index) => (
-              <a href={'/detail'} className="whitespace-nowrap" key={index}>
-                {sp.name}
+            {ds.sanPham.map((sp, index) => (
+              <a
+                href={`/detail/${sp.id}?language=${language}`}
+                className="whitespace-nowrap"
+                key={index}
+              >
+                {sp[nameSp]}
               </a>
             ))}
           </div>
@@ -106,7 +41,7 @@ const HeaderSanPham = () => {
     });
   };
   return (
-    <div className="flex justify-center items-center flex-wrap  col-span-10 pt-14 space-y-3">
+    <div className="col-span-10 flex justify-center flex-wrap  pt-14 space-y-3 items-end">
       {renderListSP()}
     </div>
   );

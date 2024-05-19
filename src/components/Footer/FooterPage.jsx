@@ -1,11 +1,36 @@
 import React from 'react';
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 const FooterPage = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const { content, language } = useSelector((state) => state.contentPageSlice);
+
   const navigateScrool = (url, idSection) => {
     const language = searchParams.get('language') || 'vn';
     navigate(`${url}?language=${language}&sectionId=${idSection}`);
+  };
+
+  const renderSp = () => {
+    let langueDinamicKey = {
+      en: 'En',
+      vn: 'Vn',
+    };
+    let nameDssp = 'name' + langueDinamicKey[language];
+
+    return content.dssp?.map((ds, index) => {
+      return (
+        <p
+          key={ds.id}
+          onClick={() => {
+            navigateScrool('/list-product', 'dsspPageSp');
+          }}
+        >
+          {ds[nameDssp]}
+        </p>
+      );
+    });
   };
   return (
     <div className="section pb-0">
@@ -13,10 +38,10 @@ const FooterPage = () => {
         <div className="container_td py-12 border-b border-[#585858]">
           <div className="grid_td color_text_content">
             <div className="col-start-1 col-end-3">
-              <img src="./img/footer_logo.png" alt="" />
+              <img src="/./img/footer_logo.png" alt="" />
             </div>
-            <div className="col-start-4 col-end-13 flex justify-between  font-light cursor-pointer">
-              <div className=" space-y-2 flex-1">
+            <div className="col-start-4 col-end-13 flex font-light cursor-pointer justify-between ">
+              <div className=" space-y-2  ">
                 <p className="font-bold">Trang chủ</p>
                 <p
                   onClick={() => {
@@ -30,7 +55,7 @@ const FooterPage = () => {
                     navigateScrool('/', 'sanPhamcc');
                   }}
                 >
-                  Sản phẩm chúng tôi cung cấp
+                  Sản phẩm chúng tôi <br /> cung cấp
                 </p>
                 <p
                   onClick={() => {
@@ -48,7 +73,7 @@ const FooterPage = () => {
                 </p>
               </div>
 
-              <div className=" space-y-2 flex-1 pl-7">
+              <div className=" space-y-2 ">
                 <p className="font-bold">Về chúng tôi</p>
                 <p
                   onClick={() => {
@@ -66,7 +91,7 @@ const FooterPage = () => {
                 </p>
               </div>
 
-              <div className=" space-y-2 pl-3">
+              <div className=" space-y-2 ">
                 <p
                   onClick={() => {
                     navigateScrool('/list-product', 'dsspPageSp');
@@ -75,58 +100,11 @@ const FooterPage = () => {
                 >
                   Sản phẩm
                 </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/detail', 'ttSpDetail');
-                  }}
-                >
-                  PE Foam
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/detail', 'ttSpDetail');
-                  }}
-                >
-                  Ống gen
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/detail', 'ttSpDetail');
-                  }}
-                >
-                  Ống giấy
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/detail', 'ttSpDetail');
-                  }}
-                >
-                  Xốp khí
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/detail', 'ttSpDetail');
-                  }}
-                >
-                  Băng keo
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/detail', 'ttSpDetail');
-                  }}
-                >
-                  Màng CO
-                </p>
-                <p
-                  onClick={() => {
-                    navigateScrool('/detail', 'ttSpDetail');
-                  }}
-                >
-                  Xốp EPS
-                </p>
+
+                {renderSp()}
               </div>
 
-              <div className=" space-y-2 flex-1 pl-10">
+              <div className=" space-y-2 ">
                 <p className="font-bold">Hỗ trợ khách hàng</p>
                 <p
                   onClick={() => {
@@ -151,14 +129,14 @@ const FooterPage = () => {
                 </p>
               </div>
 
-              <div className=" space-y-2 flex-1 pl-10">
+              <div className=" space-y-2">
                 <p className="font-bold">Tuyển Dụng </p>
                 <p
                   onClick={() => {
                     navigateScrool('/tuyen-dung', 'tslvTd');
                   }}
                 >
-                  Tại sao làm việc tại Đại Tiến Đạt
+                  Tại sao làm việc tại <br /> Đại Tiến Đạt
                 </p>
                 <p
                   onClick={() => {

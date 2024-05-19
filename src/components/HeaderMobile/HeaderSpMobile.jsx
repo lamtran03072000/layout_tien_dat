@@ -41,7 +41,11 @@ const HeaderSpMobile = ({ children }) => {
         ) : (
           <span></span>
         )}
-        <img className="w-[70px] h-[78px]" src="./img/footer_logo.png" alt="" />
+        <img
+          className="w-[70px] h-[78px]"
+          src="/./img/footer_logo.png"
+          alt=""
+        />
 
         <CloseOutlined
           onClick={handleCloseHeader}

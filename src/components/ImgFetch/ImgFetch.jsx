@@ -16,7 +16,14 @@ const ImgFetch = ({ imgId }) => {
 
     fetchImg();
   }, [imgId]);
-  return <img src={imgSrc} alt="" className="w-full h-full object-cover" />;
+  return (
+    <img
+      src={imgSrc}
+      alt=""
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  );
 };
 
 export default ImgFetch;

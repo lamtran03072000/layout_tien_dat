@@ -44,7 +44,7 @@ const HeaderSp = ({ children, setIsOnHeaderSP }) => {
         <div className="col-span-2">
           <img
             className="w-[177px] h-[193px]"
-            src="./img/footer_logo.png"
+            src="/./img/footer_logo.png"
             alt=""
           />
         </div>

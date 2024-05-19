@@ -16,7 +16,6 @@ const HeaderVeChungToiMobile = () => {
     dispatch(getContentPageThunk(lg));
   };
   const handleActiveHeader = (idActive) => {
-    console.log('idActive: ', idActive);
     dispatch(setActiveHeaderMobileAction(idActive));
   };
   return (

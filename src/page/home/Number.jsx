@@ -11,6 +11,7 @@ const Number = ({ dataNumber }) => {
     dataNumber && (
       <div className="relative">
         <img
+          loading="lazy"
           src="./img/number.png"
           alt=""
           className="absolute top-0 left-0 w-full h-full"

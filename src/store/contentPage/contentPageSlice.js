@@ -3,12 +3,17 @@ import { getContentPageThunk } from './contentPageThunk';
 
 const initialState = {
   content: {},
+  language: 'vn',
 };
 
 const contentPageSlice = createSlice({
   name: 'contentPageSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    changeLanguageAction: (state, action) => {
+      state.language = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getContentPageThunk.fulfilled, (state, action) => {
       state.content = action.payload;
@@ -16,6 +21,6 @@ const contentPageSlice = createSlice({
   },
 });
 
-export const {} = contentPageSlice.actions;
+export const { changeLanguageAction } = contentPageSlice.actions;
 
 export default contentPageSlice.reducer;

@@ -14,7 +14,7 @@ const ZaloChatButton = () => {
           className={`overflow-hidden absolute left-1/2 top-1/2 -translate-x-1/2   rounded-2xl border-blue-400 border w-14 h-14 lg:w-12 lg:h-12`}
         >
           <img
-            src="./img/zalo.jpeg"
+            src="/./img/zalo.jpeg"
             alt=""
             className="w-full h-full object-cover"
           />

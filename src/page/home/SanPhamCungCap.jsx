@@ -1,32 +1,19 @@
 import { Carousel } from 'antd';
 import React, { useRef } from 'react';
-import { DesktopReponsive } from '../../HOC/reponsive';
-const contentStyle = {
-  padding: '20px',
-};
+import { useSelector } from 'react-redux';
+import ImgFetch from '../../components/ImgFetch/ImgFetch';
 
-const dataSanPhamCungCap = [
-  { img: './img/Sanphamcungcap/1.png' },
-  { img: './img/Sanphamcungcap/2.png' },
-  { img: './img/Sanphamcungcap/3.png' },
-  { img: './img/Sanphamcungcap/4.png' },
-  { img: './img/Sanphamcungcap/1.png' },
-  { img: './img/Sanphamcungcap/2.png' },
-  { img: './img/Sanphamcungcap/3.png' },
-  { img: './img/Sanphamcungcap/4.png' },
-  { img: './img/Sanphamcungcap/1.png' },
-  { img: './img/Sanphamcungcap/2.png' },
-  { img: './img/Sanphamcungcap/3.png' },
-  { img: './img/Sanphamcungcap/4.png' },
-];
 const SanPhamCungCap = ({ dataSanPhamCungCap }) => {
   const refCarou = useRef(null);
+
+  const { content, language } = useSelector((state) => state.contentPageSlice);
+
   const renderSanPhamCungCap = () => {
-    return dataSanPhamCungCap.listImg?.map((d, i) => {
+    return content.dssp.map((d, i) => {
       return (
         <div key={i}>
           <div className="p-5 lg:p-1">
-            <img src={d.img} />
+            <ImgFetch imgId={d.img} />
           </div>
         </div>
       );
