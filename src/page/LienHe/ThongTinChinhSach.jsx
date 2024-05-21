@@ -29,7 +29,7 @@ const ThongTinChinhSach = () => {
                     alt=""
                   />
                 </div>
-                <p className="w-3/4 text-center">
+                <p className="w-full lg:w-3/4 text-center">
                   {dataLienHe?.chinhSachThanhToan[0].title}
                 </p>
               </div>
@@ -43,8 +43,7 @@ const ThongTinChinhSach = () => {
                     alt=""
                   />
                 </div>
-                <p className="w-3/4 text-center">
-                  {' '}
+                <p className="w-full lg:w-3/4 text-center">
                   {dataLienHe?.chinhSachThanhToan[1].title}
                 </p>
               </div>
@@ -58,7 +57,7 @@ const ThongTinChinhSach = () => {
                     alt=""
                   />
                 </div>
-                <p className="w-3/4 text-center">
+                <p className="w-full lg:w-3/4 text-center">
                   {dataLienHe?.chinhSachThanhToan[2].title}
                 </p>
               </div>

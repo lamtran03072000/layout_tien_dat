@@ -33,10 +33,13 @@ const HeaderMobile = () => {
   const { activeHeaderMobile } = useSelector((state) => state.animationSlice);
   const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
+    console.log('yes');
     const language = searchParams.get('language');
     if (language) {
       dispatch(getContentPageThunk(language));
       dispatch(changeLanguageAction(language));
+    } else {
+      dispatch(getContentPageThunk('vn'));
     }
   }, []);
   const handleOpenHeaderSp = () => {

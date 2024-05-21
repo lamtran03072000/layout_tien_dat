@@ -9,12 +9,8 @@ const HeaderVeChungToiMobile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { content } = useSelector((state) => state.contentPageSlice);
+  const { content, language } = useSelector((state) => state.contentPageSlice);
 
-  const handleSwitchLanguage = (lg) => {
-    setSearchParams({ language: lg });
-    dispatch(getContentPageThunk(lg));
-  };
   const handleActiveHeader = (idActive) => {
     dispatch(setActiveHeaderMobileAction(idActive));
   };
@@ -23,7 +19,7 @@ const HeaderVeChungToiMobile = () => {
       <div className="flex justify-between items-center">
         <p
           onClick={() => {
-            navigate('/tuyen-dung');
+            navigate(`/tuyen-dung?language=${language}`);
           }}
           className="font-semibold text-base"
         >
@@ -44,7 +40,7 @@ const HeaderVeChungToiMobile = () => {
       </div>
       <div
         onClick={() => {
-          navigate('/ve-chung-toi');
+          navigate(`/ve-chung-toi?language=${language}`);
         }}
         className="flex justify-between items-center"
       >

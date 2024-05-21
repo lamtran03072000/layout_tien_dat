@@ -1,8 +1,21 @@
 import React from 'react';
 import ShowDes from './ShowDes';
 import parse from 'html-react-parser';
+import { useSelector } from 'react-redux';
+
+const numberSoLuong = {
+  vn: 'Số lượng',
+  en: 'Quantity',
+};
+
+const textSoLuong = {
+  vn: 'Nhân công',
+  en: 'labor',
+};
 
 const CacViTriTuyenDung = ({ dataCacViTriTuyenDung }) => {
+  const { content, language } = useSelector((state) => state.contentPageSlice);
+
   const renderViTriTuyenDung = () => {
     return dataCacViTriTuyenDung?.cacViTri.map((d, i) => {
       return (
@@ -18,7 +31,7 @@ const CacViTriTuyenDung = ({ dataCacViTriTuyenDung }) => {
                 {d.tenViTri}
               </p>
               <p className="text-white text-xl lg:text-xs font-extralight">
-                Số Lượng : {d.soLuong} nhân công
+                {numberSoLuong[language]} : {d.soLuong} {textSoLuong[language]}
               </p>
             </div>
             <div>

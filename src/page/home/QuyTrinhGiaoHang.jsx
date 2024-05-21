@@ -68,10 +68,11 @@ const QuyTrinhGiaoHang = () => {
       clearInterval(timeStepIcon);
     };
   }, []);
-  const renderStepGiaoHang = (icon, stepRow, content) => {
+  const renderStepGiaoHang = (icon, stepRow, content, index) => {
     let isActive = Number(stepRow) == step;
     return (
       <div
+        key={index}
         className={`flex space-x-20 lg:space-x-10 ${
           stepRow == '04' ? '' : 'border-b'
         }  py-12 lg:py-8 items-center font-semibold ${
@@ -125,7 +126,7 @@ const QuyTrinhGiaoHang = () => {
               ></div>
             </div>
             {data[language].map((d, i) => {
-              return renderStepGiaoHang(d.icon, d.step, d.content);
+              return renderStepGiaoHang(d.icon, d.step, d.content, i);
             })}
           </div>
           <div className="w-1/2 h-2/3 lg:hidden absolute -right-12 bottom-14">

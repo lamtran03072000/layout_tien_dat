@@ -3,12 +3,10 @@ import { Carousel } from 'antd';
 import ImgFetch from '../../components/ImgFetch/ImgFetch';
 const contentStyle = {
   margin: 0,
-  height: '100vh',
   overflow: 'hidden',
   background: 'red',
 };
 const TuLieuHinhAnh = ({ dataTuLieuHinhAnh }) => {
-  console.log('dataTuLieuHinhAnh: ', dataTuLieuHinhAnh);
   const refCarou = useRef(null);
   const handleNext = () => {
     refCarou.current.next();
@@ -37,10 +35,10 @@ const TuLieuHinhAnh = ({ dataTuLieuHinhAnh }) => {
             <i className="fa-solid fa-angles-left"></i>
           </span>
           <Carousel ref={refCarou} slidesToShow={1} dots={false}>
-            {dataTuLieuHinhAnh.listData.map((item) => {
+            {dataTuLieuHinhAnh.listData.map((item, index) => {
               return (
-                <div>
-                  <div style={contentStyle}>
+                <div key={index}>
+                  <div className="h-screen lg:h-[40vh]" style={contentStyle}>
                     <ImgFetch imgId={item} />
                   </div>
                 </div>

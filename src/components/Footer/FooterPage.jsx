@@ -1,7 +1,20 @@
 import React from 'react';
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import parse from 'html-react-parser';
 
+const titleSPCC = {
+  vn: ' Sản phẩm chúng tôi <br /> cung cấp',
+  en: 'Products we <br /> provide',
+};
+const titleCS = {
+  vn: ' Chính sách',
+  en: 'Policy',
+};
+const titleFormLienHe = {
+  vn: 'Form liên hệ',
+  en: 'Contact form',
+};
 const FooterPage = () => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -42,52 +55,56 @@ const FooterPage = () => {
             </div>
             <div className="col-start-4 col-end-13 flex font-light cursor-pointer justify-between ">
               <div className=" space-y-2  ">
-                <p className="font-bold">Trang chủ</p>
+                <p className="font-bold">
+                  {content?.headerPage?.titlePage['1']}
+                </p>
                 <p
                   onClick={() => {
                     navigateScrool('/', 'loiMoDau');
                   }}
                 >
-                  Lời mở đầu
+                  {parse(`${content?.homePage?.loiMoDau?.title}`)}
                 </p>
                 <p
                   onClick={() => {
                     navigateScrool('/', 'sanPhamcc');
                   }}
                 >
-                  Sản phẩm chúng tôi <br /> cung cấp
+                  {parse(`${titleSPCC[language]}`)}
                 </p>
                 <p
                   onClick={() => {
                     navigateScrool('/', 'linhVucUngDung');
                   }}
                 >
-                  Lĩnh vực ứng dụng
+                  {parse(`${content?.homePage?.linhVucUngDung?.title}`)}
                 </p>
                 <p
                   onClick={() => {
                     navigateScrool('/', 'tlhahp');
                   }}
                 >
-                  Thư viện hình ảnh
+                  {parse(`${content?.homePage?.tuLieuHinhAnh?.title}`)}
                 </p>
               </div>
 
               <div className=" space-y-2 ">
-                <p className="font-bold">Về chúng tôi</p>
+                <p className="font-bold">
+                  {content?.headerPage?.titlePage['2']}
+                </p>
                 <p
                   onClick={() => {
                     navigateScrool('/ve-chung-toi', 'giaTriCotLoi');
                   }}
                 >
-                  Giá trị cốt lõi
+                  {parse(`${content?.about?.coreValues?.title}`)}
                 </p>
                 <p
                   onClick={() => {
                     navigateScrool('/ve-chung-toi', 'tuLieuHinhAnhAbout');
                   }}
                 >
-                  Thư viện hình ảnh
+                  {parse(`${content?.homePage?.tuLieuHinhAnh?.title}`)}
                 </p>
               </div>
 
@@ -98,39 +115,43 @@ const FooterPage = () => {
                   }}
                   className="font-bold"
                 >
-                  Sản phẩm
+                  {content?.headerPage?.titlePage['3']}
                 </p>
 
                 {renderSp()}
               </div>
 
               <div className=" space-y-2 ">
-                <p className="font-bold">Hỗ trợ khách hàng</p>
+                <p className="font-bold">
+                  {content?.headerPage?.titlePage['4']}
+                </p>
                 <p
                   onClick={() => {
                     navigateScrool('/lien-he', 'ttlienhe');
                   }}
                 >
-                  Thông tin
+                  {parse(`${content?.lienHe?.banner?.title}`)}
                 </p>
                 <p
                   onClick={() => {
                     navigateScrool('/lien-he', 'chinhSachLienHe');
                   }}
                 >
-                  Chính sách
+                  {titleCS[language]}
                 </p>
                 <p
                   onClick={() => {
                     navigateScrool('/lien-he', 'formLienHe');
                   }}
                 >
-                  Form liên hệ
+                  {titleFormLienHe[language]}
                 </p>
               </div>
 
               <div className=" space-y-2">
-                <p className="font-bold">Tuyển Dụng </p>
+                <p className="font-bold">
+                  {content?.headerPage?.titlePage['5']}
+                </p>
                 <p
                   onClick={() => {
                     navigateScrool('/tuyen-dung', 'tslvTd');
@@ -143,7 +164,7 @@ const FooterPage = () => {
                     navigateScrool('/tuyen-dung', 'giatriDTD');
                   }}
                 >
-                  Giá trị tại Đại Tiến Đạt
+                  {parse(`${content?.tuyenDung?.giaTri?.title}`)}
                 </p>
 
                 <p
@@ -151,7 +172,7 @@ const FooterPage = () => {
                     navigateScrool('/tuyen-dung', 'cvtTd');
                   }}
                 >
-                  Các vị trí tuyển dụng
+                  {parse(`${content?.tuyenDung?.cacViTriTuyenDung?.title}`)}
                 </p>
               </div>
             </div>

@@ -7,5 +7,3 @@ export const store = configureStore({
   reducer: rootReducer,
 });
 store.dispatch(turnOnloadingAction());
-
-store.dispatch(getContentPageThunk('vn'));

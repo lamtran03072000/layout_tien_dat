@@ -58,6 +58,8 @@ export default function Header() {
     if (language) {
       dispatch(getContentPageThunk(language));
       dispatch(changeLanguageAction(language));
+    } else {
+      dispatch(getContentPageThunk('vn'));
     }
   }, []);
   return (

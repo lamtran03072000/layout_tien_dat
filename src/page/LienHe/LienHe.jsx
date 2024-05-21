@@ -5,8 +5,8 @@ import ThongTinChinhSach from './ThongTinChinhSach';
 import { useSelector } from 'react-redux';
 
 const titleLienHe = {
-  en: 'Liên Hệ',
-  vn: 'Contact',
+  vn: 'Liên Hệ',
+  en: 'Contact',
 };
 
 const adressLg = {
@@ -27,7 +27,7 @@ const LienHe = () => {
         </div>
         <div className="l-text !font-bold ">
           <div className="lg:text-3xl  text-center">
-            <span className="w-1/2 inline-block">
+            <span className="w-1/2 inline-block lg:w-4/5">
               {dataLienHe?.banner.subTitle}
             </span>
           </div>

@@ -9,7 +9,7 @@ import { changeLanguageAction } from '../../store/contentPage/contentPageSlice';
 const HeaderMain = () => {
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { content } = useSelector((state) => state.contentPageSlice);
+  const { content, language } = useSelector((state) => state.contentPageSlice);
   const navigate = useNavigate();
   const handleSwitchLanguage = (lg) => {
     setSearchParams({ language: lg });
@@ -24,7 +24,7 @@ const HeaderMain = () => {
       <div
         onClick={() => {
           // navigate('/');
-          window.location.href = '/';
+          window.location.href = `/?language=${language}`;
         }}
         className="flex justify-between items-center"
       >
@@ -58,7 +58,7 @@ const HeaderMain = () => {
       <div
         onClick={() => {
           // navigate('/');
-          window.location.href = '/lien-he';
+          window.location.href = `/lien-he?language=${language}`;
         }}
         className="flex justify-between items-center"
       >

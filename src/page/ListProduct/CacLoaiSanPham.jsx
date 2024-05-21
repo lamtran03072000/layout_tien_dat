@@ -2,6 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import ImgFetch from '../../components/ImgFetch/ImgFetch';
 
+const title = {
+  en: 'List products',
+  vn: 'Các loại sản phẩm',
+};
+
 const CacLoaiSanPham = () => {
   const { content, language } = useSelector((state) => state.contentPageSlice);
 
@@ -13,7 +18,7 @@ const CacLoaiSanPham = () => {
 
     let nameSp = 'name' + langueDinamicKey[language];
     let nameDssp = 'name' + langueDinamicKey[language];
-    return content.dssp.map((ds, index) => {
+    return content.dssp?.map((ds, index) => {
       return (
         <div
           key={index}
@@ -28,9 +33,13 @@ const CacLoaiSanPham = () => {
           <div className="flex items-center justify-between space-x-6">
             {ds.sanPham.map((sp, index) => {
               return (
-                <p key={index} className="text-[#818181] ">
+                <a
+                  href={`/detail/${sp.id}?language=${language}`}
+                  key={index}
+                  className="text-[#818181] "
+                >
                   {sp[nameSp]}
-                </p>
+                </a>
               );
             })}
           </div>
@@ -41,7 +50,7 @@ const CacLoaiSanPham = () => {
   return (
     <div className="container_td section" id="dsspPageSp">
       <h3 className="text-3xl lg:text-xl color_text_content font-bold text-center mb-12">
-        Các loại sản phẩm
+        {title[language]}
       </h3>
       <div className="flex justify-center items-center flex-wrap">
         {renderListLoaiSp()}

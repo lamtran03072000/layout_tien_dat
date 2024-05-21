@@ -2,8 +2,26 @@ import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import { NavLink, useNavigate } from 'react-router-dom';
 import parse from 'html-react-parser';
+import { useSelector } from 'react-redux';
+
+const buttonXemChiTiet = {
+  vn: 'Xem chi tiết công việc',
+  en: 'View job details',
+};
+
+const button = {
+  vn: 'Liên hệ ngay',
+  en: 'contact now',
+};
+
+const title = {
+  en: 'Detail job',
+  vn: 'Chi tiết công việc',
+};
 
 const ShowDes = ({ des }) => {
+  const { content, language } = useSelector((state) => state.contentPageSlice);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const showModal = () => {
@@ -21,10 +39,11 @@ const ShowDes = ({ des }) => {
         className="text-white font-extralight lg:text-xs"
         onClick={showModal}
       >
-        Xem chi tiết công việc <i className="fa-solid fa-angles-right"></i>
+        {buttonXemChiTiet[language]}{' '}
+        <i className="fa-solid fa-angles-right"></i>
       </button>
       <Modal
-        title="Chi tiết công việc"
+        title={title[language]}
         open={isModalOpen}
         footer={false}
         onOk={handleOk}
@@ -40,7 +59,7 @@ const ShowDes = ({ des }) => {
               }}
               className="button_td text-xl !rounded-xl lg:text-base"
             >
-              Liên hệ ngay
+              {button[language]}
             </button>
           </div>
         </div>

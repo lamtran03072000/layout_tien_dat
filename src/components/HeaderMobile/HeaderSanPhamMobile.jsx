@@ -67,7 +67,9 @@ const HeaderSanPhamMobile = () => {
   return (
     <div>
       <button className="hidden button_td lg:block lg:text-base font-bold w-3/4 mx-auto mb-4">
-        <a href="/list-product">{btnXemTatCaSp[language]}</a>
+        <a href={`/list-product?language=${language}`}>
+          {btnXemTatCaSp[language]}
+        </a>
       </button>
       <div className="flex flex-wrap items-start">{renderListSP()}</div>
     </div>
