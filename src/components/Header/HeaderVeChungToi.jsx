@@ -7,7 +7,7 @@ const pl = {
   en: 'pr-20',
 };
 const HeaderVeChungToi = () => {
-  const { content } = useSelector((state) => state.contentPageSlice);
+  const { content, language } = useSelector((state) => state.contentPageSlice);
   const [searchParams, setSearchParams] = useSearchParams();
 
   return (
@@ -23,7 +23,9 @@ const HeaderVeChungToi = () => {
                 : 'pl-1'
             } space-y-8 font-semibold flex-1`}
           >
-            <a href="/tuyen-dung"> {content?.headerPage?.titlePage['5']}</a>
+            <a href={`/tuyen-dung?language=${language}`}>
+              {content?.headerPage?.titlePage['5']}
+            </a>
             <p> {content?.headerPage?.titlePage['6']}</p>
           </div>
           <span className="flex-1"></span>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { imgUploadService } from '../../service/imgUpload';
+import { Image } from 'antd';
 
-const ImgFetch = ({ imgId }) => {
+const ImgFetch = ({ imgId, isPreview = false }) => {
   const [imgSrc, setImgSrc] = useState(null);
   useEffect(() => {
     const fetchImg = async () => {
@@ -17,11 +18,16 @@ const ImgFetch = ({ imgId }) => {
     fetchImg();
   }, [imgId]);
   return (
-    <img
+    <Image
+      preview={isPreview}
       src={imgSrc}
       alt=""
-      className="w-full h-full object-cover"
+      width={'100%'}
+      height={'100%'}
       loading="lazy"
+      style={{
+        objectFit: 'cover',
+      }}
     />
   );
 };

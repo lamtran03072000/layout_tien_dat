@@ -23,6 +23,11 @@ const FooterPage = () => {
   const navigateScrool = (url, idSection) => {
     const language = searchParams.get('language') || 'vn';
     navigate(`${url}?language=${language}&sectionId=${idSection}`);
+    const sectionElement = document.getElementById(idSection);
+
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const renderSp = () => {
@@ -37,7 +42,7 @@ const FooterPage = () => {
         <p
           key={ds.id}
           onClick={() => {
-            navigateScrool('/list-product', 'dsspPageSp');
+            navigateScrool('/list-product', `dssp${ds.id}`);
           }}
         >
           {ds[nameDssp]}

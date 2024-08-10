@@ -34,7 +34,7 @@ const TuLieuHinhAnh = () => {
               borderRadius: 10,
             }}
           >
-            <ImgFetch imgId={d} />
+            <ImgFetch isPreview={true} imgId={d} />
           </div>
         </div>
       );
@@ -63,7 +63,7 @@ const TuLieuHinhAnh = () => {
                   borderRadius: 10,
                 }}
               >
-                <ImgFetch imgId={dataTuLieu?.listData[d1]} />
+                <ImgFetch isPreview={true} imgId={dataTuLieu?.listData[d1]} />
               </div>
               <div
                 style={{
@@ -73,7 +73,7 @@ const TuLieuHinhAnh = () => {
                   borderRadius: 10,
                 }}
               >
-                <ImgFetch imgId={dataTuLieu?.listData[d2]} />
+                <ImgFetch isPreview={true} imgId={dataTuLieu?.listData[d2]} />
               </div>
               <div
                 style={{
@@ -83,7 +83,7 @@ const TuLieuHinhAnh = () => {
                   borderRadius: 10,
                 }}
               >
-                <ImgFetch imgId={dataTuLieu?.listData[d3]} />
+                <ImgFetch isPreview={true} imgId={dataTuLieu?.listData[d3]} />
               </div>
               <div
                 style={{
@@ -93,7 +93,7 @@ const TuLieuHinhAnh = () => {
                   borderRadius: 10,
                 }}
               >
-                <ImgFetch imgId={dataTuLieu?.listData[d4]} />
+                <ImgFetch isPreview={true} imgId={dataTuLieu?.listData[d4]} />
               </div>
             </div>
           </div>
@@ -126,13 +126,25 @@ const TuLieuHinhAnh = () => {
         </span>
 
         <DesktopReponsive>
-          <Carousel ref={refCarou} slidesToShow={1} dots={false}>
+          <Carousel
+            autoplay
+            autoplaySpeed={2000}
+            ref={refCarou}
+            slidesToShow={1}
+            dots={false}
+          >
             {renderTuLieuHinhAnhDeskTop()}
           </Carousel>
         </DesktopReponsive>
 
         <MobileReponsive>
-          <Carousel ref={refCarou} slidesToShow={1} dots={false}>
+          <Carousel
+            autoplay
+            autoplaySpeed={2000}
+            ref={refCarou}
+            slidesToShow={1}
+            dots={false}
+          >
             {renderTuLieuHinhAnhMobile()}
           </Carousel>
         </MobileReponsive>

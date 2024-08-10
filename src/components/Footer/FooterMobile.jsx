@@ -13,12 +13,17 @@ const titleFormLienHe = {
 };
 const FooterMobile = () => {
   const { content, language } = useSelector((state) => state.contentPageSlice);
-  console.log('content: ', content);
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const navigateScrool = (url, idSection) => {
     const language = searchParams.get('language') || 'vn';
     navigate(`${url}?language=${language}&sectionId=${idSection}`);
+
+    const sectionElement = document.getElementById(idSection);
+
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const renderSp = () => {
@@ -33,7 +38,7 @@ const FooterMobile = () => {
         <p
           key={ds.id}
           onClick={() => {
-            navigateScrool('/list-product', 'dsspPageSp');
+            navigateScrool('/list-product', `dssp${ds.id}`);
           }}
         >
           {ds[nameDssp]}
@@ -46,7 +51,7 @@ const FooterMobile = () => {
     <div className="section pb-0">
       <div className="border-t shadow space-y-6 pt-6  ">
         <div className="flex justify-center items-center">
-          <img src="./img/footer_logo.png" alt="" width={105} height={132} />
+          <img src="/img/footer_logo.png" alt="" width={105} height={132} />
         </div>
         <div className=" border-b border-[#585858] space-y-6 pb-6 color_text_content">
           <div className="container_td flex justify-between space-x-7">

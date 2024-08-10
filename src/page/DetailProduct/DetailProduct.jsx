@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { sanPhamService } from '../../service/sanPhamService';
 import { useSelector } from 'react-redux';
+import ListImgDes from './ListImgDes';
 let langueDinamicKey = {
   en: 'En',
   vn: 'Vn',
@@ -29,7 +30,7 @@ const DetailProduct = () => {
   };
   useEffect(() => {
     fetchSpApi();
-  }, []);
+  }, [idSp]);
   return (
     <div>
       <BannerSp content={<span>{dataSp[nameSp]}</span>} />

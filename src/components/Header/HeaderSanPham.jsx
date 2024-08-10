@@ -19,17 +19,17 @@ const HeaderSanPham = () => {
       return (
         <div
           key={index}
-          className="flex flex-col items-center space-y-3 w-1/4 "
+          className="flex flex-col items-center space-y-3 w-1/4 group  mb-10"
         >
           <div className="w-[141px] h-[141px]">
             <ImgFetch imgId={ds.img} />
           </div>
-          <p>{ds[nameDssp]}</p>
-          <div className="flex space-x-3">
+          <p className="font-semibold">{ds[nameDssp]}</p>
+          <div className="flex space-x-3 flex-col   max-h-0 group-hover:max-h-[200px] opacity-0 group-hover:opacity-100 overflow-hidden duration-1000  justify-center items-center">
             {ds.sanPham.map((sp, index) => (
               <a
                 href={`/detail/${sp.id}?language=${language}`}
-                className="whitespace-nowrap"
+                className=""
                 key={index}
               >
                 {sp[nameSp]}
@@ -41,7 +41,7 @@ const HeaderSanPham = () => {
     });
   };
   return (
-    <div className="col-span-10 flex justify-center flex-wrap  pt-14 space-y-3 items-end">
+    <div className="col-span-10 flex  flex-wrap  pt-14  items-start">
       {renderListSP()}
     </div>
   );

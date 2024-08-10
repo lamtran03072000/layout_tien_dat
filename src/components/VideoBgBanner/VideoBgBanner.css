@@ -1,0 +1,15 @@
+.react-player-wrapper {
+  width: 100%; /* or any specific dimension */
+  height: 100%; /* or any specific dimension */
+  position: relative; /* Ensures the player stays in this container */
+  overflow: hidden; /* Hides anything outside this container */
+}
+
+.react-player-wrapper video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover; /* Cover, contain, or whatever fit you need */
+  position: absolute;
+  top: 0;
+  left: 0;
+}

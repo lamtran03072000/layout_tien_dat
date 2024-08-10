@@ -1,11 +1,11 @@
 import React from 'react';
-import YouTubeVideo from '../../components/VideoYoutube/VideoYoutube';
+// import YouTubeVideo from '../../components/VideoYoutube/VideoYoutube';
 import { useSelector } from 'react-redux';
 import ImgFetch from '../../components/ImgFetch/ImgFetch';
+import ReactPlayer from 'react-player';
 
 const GiaTriTaiDTD = () => {
   const { content } = useSelector((state) => state.contentPageSlice);
-  console.log('content: ', content);
 
   return (
     <div>
@@ -16,7 +16,14 @@ const GiaTriTaiDTD = () => {
 
         <div className="space-y-12 lg:space-y-7">
           <div className="w-full h-[652px] lg:h-[210px]  bg-gray-300">
-            <YouTubeVideo videoId={content?.tuyenDung?.giaTri?.idYoutube} />
+            <ReactPlayer
+              url={content?.tuyenDung?.giaTri?.idYoutube}
+              width="100%"
+              height="100%"
+              style={{
+                background: 'red',
+              }}
+            />
           </div>
           <div className="w-full lg:overflow-x-scroll">
             <div className="flex space-x-8 lg:w-[120%] lg:space-x-4 justify-between">
@@ -25,6 +32,7 @@ const GiaTriTaiDTD = () => {
                   <div className="absolute w-full h-full">
                     {content?.tuyenDung?.giaTri?.listData[0]?.img && (
                       <ImgFetch
+                        isPreview={true}
                         imgId={content.tuyenDung.giaTri.listData[0].img}
                       />
                     )}
@@ -40,6 +48,7 @@ const GiaTriTaiDTD = () => {
                   <div className="absolute w-full h-full">
                     {content?.tuyenDung?.giaTri?.listData[1]?.img && (
                       <ImgFetch
+                        isPreview={true}
                         imgId={content.tuyenDung.giaTri.listData[1].img}
                       />
                     )}
@@ -54,6 +63,7 @@ const GiaTriTaiDTD = () => {
                   <div className="absolute w-full h-full">
                     {content?.tuyenDung?.giaTri?.listData[2]?.img && (
                       <ImgFetch
+                        isPreview={true}
                         imgId={content.tuyenDung.giaTri.listData[2].img}
                       />
                     )}

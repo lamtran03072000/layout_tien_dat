@@ -14,7 +14,7 @@ const Number = ({ dataNumber }) => {
           loading="lazy"
           src="./img/number.png"
           alt=""
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute top-0 left-0 w-full h-full object-cover"
         />
         <div className="container_td grid_td section relative z-10 space-y-8">
           <div className="col-start-2 col-end-6 my-auto lg:col-start-1 lg:col-end-5">

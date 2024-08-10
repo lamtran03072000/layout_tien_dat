@@ -29,7 +29,7 @@ const HeaderSpMobile = ({ children }) => {
         maxHeight: isOpenHeaderSpMb ? '100%' : '0%',
       }}
       ref={contentRef}
-      className="fixed w-full h-full  z-20 duration-200 bg-white overflow-hidden overflow-y-scroll"
+      className="fixed w-full h-full  z-50 duration-200 bg-white overflow-hidden overflow-y-scroll"
     >
       <div className="py-5 container_td flex justify-between color_text_content">
         {activeHeaderMobile ? (

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const BanMuonBietThem = ({ dataBanMuonBietThem }) => {
+  const { content, language } = useSelector((state) => state.contentPageSlice);
   return (
     dataBanMuonBietThem && (
       <div className="container_td text-center space-y-5 section">
@@ -9,7 +11,7 @@ const BanMuonBietThem = ({ dataBanMuonBietThem }) => {
         </h3>
         <div>
           <a
-            href="/lien-he"
+            href={`/lien-he?language=${language}`}
             className="button_td text-xl lg:text-base inline-block lg:w-full !rounded-xl"
           >
             {dataBanMuonBietThem?.cta}

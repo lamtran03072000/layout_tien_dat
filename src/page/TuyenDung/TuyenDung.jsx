@@ -5,6 +5,7 @@ import CacViTriTuyenDung from './CacViTriTuyenDung';
 import { useSelector } from 'react-redux';
 import parse from 'html-react-parser';
 import GiaTriTaiDTD from './GiaTriTaiDTD';
+import CarouselTd from './CarouselTd';
 
 const TuyenDung = () => {
   const { content } = useSelector((state) => state.contentPageSlice);
@@ -28,6 +29,8 @@ const TuyenDung = () => {
       <BannerSp content={renderContent()} />
       <TaiSaoLamViec dataTaiSaoLamViec={content.tuyenDung?.taiSaoLamViec} />
       <GiaTriTaiDTD />
+      <CarouselTd />
+
       <CacViTriTuyenDung
         dataCacViTriTuyenDung={content.tuyenDung?.cacViTriTuyenDung}
       />

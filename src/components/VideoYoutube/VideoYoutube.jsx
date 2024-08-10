@@ -1,17 +1,15 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 
-const YouTubeVideo = ({ videoId }) => {
-  const src = `https://www.youtube.com/embed/${videoId}`;
+const YouTubeVideo = ({ videoId, isMute = false, isPlay = true }) => {
   return (
-    <iframe
+    <ReactPlayer
+      url={videoId}
       width="100%"
       height="100%"
-      src={src}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Embedded YouTube Video"
-    ></iframe>
+      muted={isMute}
+      playing={isPlay}
+    />
   );
 };
 

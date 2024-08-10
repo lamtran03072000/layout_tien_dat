@@ -3,9 +3,9 @@ import BannerSp from '../../components/BannerSp';
 import CacLoaiSanPham from './CacLoaiSanPham';
 import BanMuonBietThem from '../../components/BanMuonBietThem';
 import { useSelector } from 'react-redux';
+import QuyTrinh from './QuyTrinh';
 const ListProduct = () => {
   const { content, language } = useSelector((state) => state.contentPageSlice);
-  console.log('content: ', content);
 
   const renderContent = () => {
     return (
@@ -26,6 +26,7 @@ const ListProduct = () => {
   return (
     <div>
       <BannerSp content={renderContent()} />
+      <QuyTrinh />
       <CacLoaiSanPham />
       <BanMuonBietThem />
     </div>

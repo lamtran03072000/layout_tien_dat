@@ -108,7 +108,7 @@ const QuyTrinhGiaoHang = () => {
         loading="lazy"
         src="./img/quy-trinh-dat-hang/bg-quytrinh.png"
         alt=""
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute top-0 left-0 w-full h-full object-cover"
       />
 
       <div className="container_td section relative z-10 ">

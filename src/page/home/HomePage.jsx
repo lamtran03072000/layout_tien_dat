@@ -3,11 +3,12 @@ import Bannertd from './Bannertd';
 import LoiMoDau from './LoiMoDau';
 import Number from './Number';
 import LinhVucUngDung from './LinhVucUngDung';
-import TuLieuHinhAnh from './TuLieuHinhAnh';
+// import TuLieuHinhAnh from './TuLieuHinhAnh';
 import SanPhamCungCap from './SanPhamCungCap';
 import BanMuonBietThem from '../../components/BanMuonBietThem';
 import { useSelector } from 'react-redux';
 import QuyTrinhGiaoHang from './QuyTrinhGiaoHang';
+import TuLieuHinhAnh from '../VeChungToi/TuLieuHinhAnh';
 
 const HomePage = () => {
   const { content } = useSelector((state) => state.contentPageSlice);
@@ -20,7 +21,8 @@ const HomePage = () => {
       <SanPhamCungCap dataSanPhamCungCap={content.homePage?.sanPhamCungCap} />
       <LinhVucUngDung dataLinhVucUngDung={content.homePage?.linhVucUngDung} />
       <QuyTrinhGiaoHang />
-      <TuLieuHinhAnh dataTuLieuHinhAnh={content.homePage?.tuLieuHinhAnh} />
+      {/* <TuLieuHinhAnh dataTuLieuHinhAnh={content.homePage?.tuLieuHinhAnh} /> */}
+      <TuLieuHinhAnh />
       <BanMuonBietThem
         dataBanMuonBietThem={content.homePage?.banMuonBietThem}
       />

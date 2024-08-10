@@ -19,8 +19,10 @@ const CacLoaiSanPham = () => {
     let nameSp = 'name' + langueDinamicKey[language];
     let nameDssp = 'name' + langueDinamicKey[language];
     return content.dssp?.map((ds, index) => {
+      const idDssp = `dssp${ds.id}`;
       return (
         <div
+          id={idDssp}
           key={index}
           className="w-1/3 lg:w-full flex flex-col items-center space-y-3 p-5"
         >
