@@ -99,8 +99,8 @@ const ListImgDes = ({ dataSp }) => {
               className=""
             >
               <div
-                onTouchMove={handleTouchMove}
-                onTouchEnd={(e) => handleTouchEnd(e)}
+                // onTouchMove={handleTouchMove}
+                // onTouchEnd={(e) => handleTouchEnd(e)}
                 className="h-[80%] rounded-lg overflow-hidden"
               >
                 <ImgFetch isPreview={true} imgId={d.img} />
