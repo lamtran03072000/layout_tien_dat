@@ -18,7 +18,6 @@ const contentStyleMobile = {
   paddingRight: '10px',
 };
 const ListImgDes = ({ dataSp }) => {
-  console.log('dataSp: ', dataSp);
   const refCarou = useRef(null);
   const renderImgDes = () => {
     if (!dataSp?.imgDesArray) return;
@@ -50,6 +49,33 @@ const ListImgDes = ({ dataSp }) => {
       }
     });
   };
+
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50; // Khoảng cách tối thiểu để được xem là lướt
+
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isSwipe = Math.abs(distance) > minSwipeDistance;
+
+    if (!isSwipe) {
+      // Nếu không phải là swipe, thì xem như click và mở preview
+      e.target.click(); // Kích hoạt sự kiện click để mở preview của Ant Design
+    }
+  };
+
   const renderImgDesMobile = () => {
     if (!dataSp?.imgDesArray) return;
 
@@ -72,8 +98,12 @@ const ListImgDes = ({ dataSp }) => {
               }}
               className=""
             >
-              <div className="h-[80%] rounded-lg overflow-hidden">
-                <ImgFetch imgId={d.img} />
+              <div
+                onTouchMove={handleTouchMove}
+                onTouchEnd={(e) => handleTouchEnd(e)}
+                className="h-[80%] rounded-lg overflow-hidden"
+              >
+                <ImgFetch isPreview={true} imgId={d.img} />
               </div>
               <p className="text-center">{d.des}</p>
             </div>
